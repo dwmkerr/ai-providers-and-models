@@ -1,5 +1,5 @@
 version: 0.1.0
-updated: 2025-03-12
+updated: 2025-03-12T00:00:00.000Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
 providers:
@@ -8,15 +8,15 @@ providers:
     api_specification: openai/v1
     models:
       - name: o3-mini
-        documentation_url: "https://platform.openai.com/docs/models/o3-mini"
-        description: "Fast, flexible, intelligent reasoning model (small o-series model)."
+        documentation_url: https://platform.openai.com/docs/models/o3-mini
+        description: Fast, flexible, intelligent reasoning model (small o-series model).
         status: preview
-        knowledge_cutoff: "October 2023"
+        knowledge_cutoff: October 2023
         context_window: 131072
         max_output_tokens: 8192
         pricing:
           input_per_million: 0.15
-          output_per_million: 0.60
+          output_per_million: 0.6
         endpoints:
           chat: true
           completions: false
@@ -28,11 +28,10 @@ providers:
           images: false
           edits: false
           moderation: false
-
       - name: o1
-        description: "High-intelligence reasoning model (first-generation o-series model)."
+        description: High-intelligence reasoning model (first-generation o-series model).
         status: preview
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: -1
         pricing:
@@ -49,18 +48,19 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/o1"
-
+        documentation_url: https://platform.openai.com/docs/models/o1
       - name: gpt-4o
-        documentation_url: "https://platform.openai.com/docs/models/gpt-4o"
-        description: "OpenAI’s versatile, high-intelligence flagship model (multimodal: accepts text and image inputs, outputs text)."
+        documentation_url: https://platform.openai.com/docs/models/gpt-4o
+        description: >-
+          OpenAI’s versatile, high-intelligence flagship model (multimodal:
+          accepts text and image inputs, outputs text).
         status: general-availability
-        knowledge_cutoff: "September 30, 2023"
+        knowledge_cutoff: September 30, 2023
         context_window: 131072
         max_output_tokens: 8192
         pricing:
-          input_per_million: 5.00
-          output_per_million: 15.00
+          input_per_million: 5
+          output_per_million: 15
         endpoints:
           chat: true
           completions: false
@@ -72,16 +72,17 @@ providers:
           images: false
           edits: false
           moderation: false
-
       - name: gpt-4
-        description: "Older version of a high-intelligence GPT-4 model (text-only, for Chat Completions)."
+        description: >-
+          Older version of a high-intelligence GPT-4 model (text-only, for Chat
+          Completions).
         status: general-availability
-        knowledge_cutoff: "November 30, 2023"
+        knowledge_cutoff: November 30, 2023
         context_window: 8192
         max_output_tokens: 8192
         pricing:
-          input_per_million: 30.00
-          output_per_million: 60.00
+          input_per_million: 30
+          output_per_million: 60
         endpoints:
           chat: true
           completions: false
@@ -93,17 +94,18 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-4"
-
+        documentation_url: https://platform.openai.com/docs/models/gpt-4
       - name: gpt-4-32k
-        description: "Variant of GPT-4 with 32k token context window (text-only older flagship model)."
+        description: >-
+          Variant of GPT-4 with 32k token context window (text-only older
+          flagship model).
         status: general-availability
-        knowledge_cutoff: "November 30, 2023"
+        knowledge_cutoff: November 30, 2023
         context_window: 32768
         max_output_tokens: 8192
         pricing:
-          input_per_million: 60.00
-          output_per_million: 120.00
+          input_per_million: 60
+          output_per_million: 120
         endpoints:
           chat: true
           completions: false
@@ -115,17 +117,18 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-4-32k"
-
+        documentation_url: https://platform.openai.com/docs/models/gpt-4-32k
       - name: gpt-4-turbo
-        description: "Early high-context version of GPT-4 (128k context) introduced as a preview model."
+        description: >-
+          Early high-context version of GPT-4 (128k context) introduced as a
+          preview model.
         status: deprecated
-        knowledge_cutoff: "April 2023"
+        knowledge_cutoff: April 2023
         context_window: 131072
         max_output_tokens: -1
         pricing:
-          input_per_million: 10.00
-          output_per_million: 30.00
+          input_per_million: 10
+          output_per_million: 30
         endpoints:
           chat: true
           completions: false
@@ -137,17 +140,18 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-4-turbo"
-
+        documentation_url: https://platform.openai.com/docs/models/gpt-4-turbo
       - name: gpt-3.5-turbo
-        description: "GPT-3.5 Turbo – legacy GPT model for cheaper chat and non-chat tasks (standard 16k context)."
+        description: >-
+          GPT-3.5 Turbo – legacy GPT model for cheaper chat and non-chat tasks
+          (standard 16k context).
         status: general-availability
-        knowledge_cutoff: "August 31, 2021"
+        knowledge_cutoff: August 31, 2021
         context_window: 16384
         max_output_tokens: 4096
         pricing:
-          input_per_million: 0.50
-          output_per_million: 1.50
+          input_per_million: 0.5
+          output_per_million: 1.5
         endpoints:
           chat: true
           completions: false
@@ -159,17 +163,18 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-3.5-turbo"
-
+        documentation_url: https://platform.openai.com/docs/models/gpt-3.5-turbo
       - name: gpt-3.5-turbo-instruct
-        description: "Instruct version of GPT-3.5 Turbo for completions (replacement for legacy Codex edit models)."
+        description: >-
+          Instruct version of GPT-3.5 Turbo for completions (replacement for
+          legacy Codex edit models).
         status: general-availability
-        knowledge_cutoff: "August 31, 2021"
+        knowledge_cutoff: August 31, 2021
         context_window: 4096
         max_output_tokens: 4096
         pricing:
-          input_per_million: 1.50
-          output_per_million: 2.00
+          input_per_million: 1.5
+          output_per_million: 2
         endpoints:
           chat: false
           completions: true
@@ -181,17 +186,18 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-3.5-turbo-instruct"
-
+        documentation_url: https://platform.openai.com/docs/models/gpt-3.5-turbo-instruct
       - name: text-davinci-003
-        description: "Davinci (GPT-3) model fine-tuned for instruction following (Completions API)."
+        description: >-
+          Davinci (GPT-3) model fine-tuned for instruction following
+          (Completions API).
         status: legacy
-        knowledge_cutoff: "June 2021"
+        knowledge_cutoff: June 2021
         context_window: 4097
         max_output_tokens: 4097
         pricing:
-          input_per_million: 20.00
-          output_per_million: 20.00
+          input_per_million: 20
+          output_per_million: 20
         endpoints:
           chat: false
           completions: true
@@ -203,17 +209,18 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/text-davinci-003"
-
+        documentation_url: https://platform.openai.com/docs/models/text-davinci-003
       - name: code-davinci-002
-        description: "Davinci-based GPT-3 model fine-tuned for code generation (Completions API)."
+        description: >-
+          Davinci-based GPT-3 model fine-tuned for code generation (Completions
+          API).
         status: legacy
-        knowledge_cutoff: "June 2021"
+        knowledge_cutoff: June 2021
         context_window: 4096
         max_output_tokens: 4096
         pricing:
-          input_per_million: 20.00
-          output_per_million: 20.00
+          input_per_million: 20
+          output_per_million: 20
         endpoints:
           chat: false
           completions: true
@@ -225,17 +232,16 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/code-davinci-002"
-
+        documentation_url: https://platform.openai.com/docs/models/code-davinci-002
       - name: text-davinci-edit-001
-        description: "GPT-3 based edit model for text editing tasks (used via Edits API)."
+        description: GPT-3 based edit model for text editing tasks (used via Edits API).
         status: deprecated
-        knowledge_cutoff: "June 2021"
+        knowledge_cutoff: June 2021
         context_window: 4096
         max_output_tokens: 4096
         pricing:
-          input_per_million: 0.00
-          output_per_million: 0.00
+          input_per_million: 0
+          output_per_million: 0
         endpoints:
           chat: false
           completions: false
@@ -247,17 +253,16 @@ providers:
           images: false
           edits: true
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/edits"
-
+        documentation_url: https://platform.openai.com/docs/models/edits
       - name: code-davinci-edit-001
-        description: "Codex (GPT-3) based edit model for code editing tasks (Edits API)."
+        description: Codex (GPT-3) based edit model for code editing tasks (Edits API).
         status: deprecated
-        knowledge_cutoff: "June 2021"
+        knowledge_cutoff: June 2021
         context_window: 4096
         max_output_tokens: 4096
         pricing:
-          input_per_million: 0.00
-          output_per_million: 0.00
+          input_per_million: 0
+          output_per_million: 0
         endpoints:
           chat: false
           completions: false
@@ -269,16 +274,17 @@ providers:
           images: false
           edits: true
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/edits"
-
+        documentation_url: https://platform.openai.com/docs/models/edits
       - name: text-embedding-3-small
-        description: "Next-generation small embedding model (optimized for latency and storage; ~1536-dimensional embeddings)."
+        description: >-
+          Next-generation small embedding model (optimized for latency and
+          storage; ~1536-dimensional embeddings).
         status: general-availability
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: 0
         pricing:
-          input_per_million: 2.00
+          input_per_million: 2
           output_per_million: -1
         endpoints:
           chat: false
@@ -291,16 +297,17 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/embeddings"
-
+        documentation_url: https://platform.openai.com/docs/models/embeddings
       - name: text-embedding-3-large
-        description: "Next-generation large embedding model (higher accuracy; ~3072-dimensional embeddings)."
+        description: >-
+          Next-generation large embedding model (higher accuracy;
+          ~3072-dimensional embeddings).
         status: general-availability
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: 0
         pricing:
-          input_per_million: 13.00
+          input_per_million: 13
           output_per_million: -1
         endpoints:
           chat: false
@@ -313,16 +320,17 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/embeddings"
-
+        documentation_url: https://platform.openai.com/docs/models/embeddings
       - name: text-embedding-ada-002
-        description: "Legacy Ada-based embedding model (768-dimensional embeddings; replaced by v3 models)."
+        description: >-
+          Legacy Ada-based embedding model (768-dimensional embeddings; replaced
+          by v3 models).
         status: legacy
-        knowledge_cutoff: "September 2021"
+        knowledge_cutoff: September 2021
         context_window: -1
         max_output_tokens: 0
         pricing:
-          input_per_million: 10.00
+          input_per_million: 10
           output_per_million: -1
         endpoints:
           chat: false
@@ -335,17 +343,16 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/embeddings"
-
+        documentation_url: https://platform.openai.com/docs/models/embeddings
       - name: text-moderation-latest
-        description: "Latest text-only content moderation model (English)."
+        description: Latest text-only content moderation model (English).
         status: general-availability
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: 32768
         max_output_tokens: 0
         pricing:
-          input_per_million: 0.00
-          output_per_million: 0.00
+          input_per_million: 0
+          output_per_million: 0
         endpoints:
           chat: false
           completions: false
@@ -357,17 +364,16 @@ providers:
           images: false
           edits: false
           moderation: true
-        documentation_url: "https://platform.openai.com/docs/models/moderation"
-
+        documentation_url: https://platform.openai.com/docs/models/moderation
       - name: text-moderation-stable
-        description: "Previous-generation stable text moderation model."
+        description: Previous-generation stable text moderation model.
         status: legacy
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: 32768
         max_output_tokens: 0
         pricing:
-          input_per_million: 0.00
-          output_per_million: 0.00
+          input_per_million: 0
+          output_per_million: 0
         endpoints:
           chat: false
           completions: false
@@ -379,17 +385,18 @@ providers:
           images: false
           edits: false
           moderation: true
-        documentation_url: "https://platform.openai.com/docs/models/moderation"
-
+        documentation_url: https://platform.openai.com/docs/models/moderation
       - name: omni-moderation-latest
-        description: "Latest multi-modal moderation model (supports text and images, plus new harm categories)."
+        description: >-
+          Latest multi-modal moderation model (supports text and images, plus
+          new harm categories).
         status: general-availability
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: 0
         pricing:
-          input_per_million: 0.00
-          output_per_million: 0.00
+          input_per_million: 0
+          output_per_million: 0
         endpoints:
           chat: false
           completions: false
@@ -401,17 +408,18 @@ providers:
           images: false
           edits: false
           moderation: true
-        documentation_url: "https://platform.openai.com/docs/models/moderation"
-
+        documentation_url: https://platform.openai.com/docs/models/moderation
       - name: omni-moderation
-        description: "Previous snapshot of the omni moderation model (multi-modal moderation, initial version)."
+        description: >-
+          Previous snapshot of the omni moderation model (multi-modal
+          moderation, initial version).
         status: legacy
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: 0
         pricing:
-          input_per_million: 0.00
-          output_per_million: 0.00
+          input_per_million: 0
+          output_per_million: 0
         endpoints:
           chat: false
           completions: false
@@ -423,12 +431,13 @@ providers:
           images: false
           edits: false
           moderation: true
-        documentation_url: "https://platform.openai.com/docs/models/moderation"
-
+        documentation_url: https://platform.openai.com/docs/models/moderation
       - name: whisper-1
-        description: "Whisper model for automatic speech recognition (transcribe and translate audio to text)."
+        description: >-
+          Whisper model for automatic speech recognition (transcribe and
+          translate audio to text).
         status: general-availability
-        knowledge_cutoff: "September 2021"
+        knowledge_cutoff: September 2021
         context_window: -1
         max_output_tokens: -1
         pricing:
@@ -445,12 +454,13 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/whisper-1"
-
+        documentation_url: https://platform.openai.com/docs/models/whisper-1
       - name: dall-e-3
-        description: "DALL·E 3 – latest image generation model (generates and edits images from text prompts)."
+        description: >-
+          DALL·E 3 – latest image generation model (generates and edits images
+          from text prompts).
         status: preview
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: -1
         pricing:
@@ -467,12 +477,13 @@ providers:
           images: true
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/dall-e-3"
-
+        documentation_url: https://platform.openai.com/docs/models/dall-e-3
       - name: dall-e-2
-        description: "DALL·E 2 – image generation model (generates and edits images from text prompts)."
+        description: >-
+          DALL·E 2 – image generation model (generates and edits images from
+          text prompts).
         status: general-availability
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: -1
         pricing:
@@ -489,16 +500,17 @@ providers:
           images: true
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/dall-e-2"
-
+        documentation_url: https://platform.openai.com/docs/models/dall-e-2
       - name: tts-1
-        description: "Standard text-to-speech model (converts text into natural-sounding speech in real-time)."
+        description: >-
+          Standard text-to-speech model (converts text into natural-sounding
+          speech in real-time).
         status: general-availability
-        knowledge_cutoff: "N/A"
+        knowledge_cutoff: N/A
         context_window: -1
         max_output_tokens: -1
         pricing:
-          input_per_million: 15.00
+          input_per_million: 15
           output_per_million: -1
         endpoints:
           chat: false
@@ -511,16 +523,17 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/tts"
-
+        documentation_url: https://platform.openai.com/docs/models/tts
       - name: tts-1-hd
-        description: "High-quality text-to-speech model (produces higher fidelity voice output, slower)."
+        description: >-
+          High-quality text-to-speech model (produces higher fidelity voice
+          output, slower).
         status: general-availability
-        knowledge_cutoff: "N/A"
+        knowledge_cutoff: N/A
         context_window: -1
         max_output_tokens: -1
         pricing:
-          input_per_million: 30.00
+          input_per_million: 30
           output_per_million: -1
         endpoints:
           chat: false
@@ -533,17 +546,18 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/tts"
-
+        documentation_url: https://platform.openai.com/docs/models/tts
       - name: gpt-4o-search-preview
-        description: "GPT-4o model specialized for web search (enables retrieval via built-in web browsing tool)."
+        description: >-
+          GPT-4o model specialized for web search (enables retrieval via
+          built-in web browsing tool).
         status: preview
-        knowledge_cutoff: "September 30, 2023"
+        knowledge_cutoff: September 30, 2023
         context_window: -1
         max_output_tokens: -1
         pricing:
-          input_per_million: 2.50
-          output_per_million: 10.00
+          input_per_million: 2.5
+          output_per_million: 10
         endpoints:
           chat: true
           completions: false
@@ -555,12 +569,13 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-4o-search-preview"
-
+        documentation_url: https://platform.openai.com/docs/models/gpt-4o-search-preview
       - name: gpt-4o-mini-search-preview
-        description: "GPT-4o mini model specialized for web search tasks (fast, cost-efficient search-oriented model)."
+        description: >-
+          GPT-4o mini model specialized for web search tasks (fast,
+          cost-efficient search-oriented model).
         status: preview
-        knowledge_cutoff: "Unknown"
+        knowledge_cutoff: Unknown
         context_window: -1
         max_output_tokens: -1
         pricing:
@@ -577,4 +592,4 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-4o-search-preview"
+        documentation_url: https://platform.openai.com/docs/models/gpt-4o-search-preview
