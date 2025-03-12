@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.3](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.2...v0.1.3) (2025-03-12)
+
+
+### Bug Fixes
+
+* **node:** don't lint dist ([3db2fa9](https://github.com/dwmkerr/ai-providers-and-models/commit/3db2fa93abb7b36bc542ab6b39999d9b3e826fb1))
+
+
+### Miscellaneous Chores
+
+* release 0.1.1 ([41351e2](https://github.com/dwmkerr/ai-providers-and-models/commit/41351e20c9170694c38623006fc501a50e2d415a))
+* release 0.1.3 ([ac66f98](https://github.com/dwmkerr/ai-providers-and-models/commit/ac66f98149e9bd6376dbadfb6edc04854bd6f737))
+
 ## [0.1.2](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.1...v0.1.2) (2025-03-12)
 
 
