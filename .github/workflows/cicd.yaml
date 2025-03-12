@@ -1,0 +1,60 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: 'model.yaml'
+
+  release:
+    needs: validate
+    runs-on: ubuntu-24.04
+    outputs:
+      released: ${{ steps.release-please.outputs.release_created }}
+      tag: ${{ steps.release-please.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: simple
+
+  update-model:
+    needs: release
+    if: ${{ needs.release.outputs.released }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update models.yaml
+        run: |
+          VERSION="${{ needs.release.outputs.tag }}"
+          DATE=$(date +'%Y-%m-%d')
+          sed -i.bak -E \
+            -e "s/^version: .*/version: ${VERSION#v}/" \
+            -e "s/^updated: .*/updated: ${DATE}/" models.yaml
+          rm models.yaml.bak
+      - name: Commit updated models.yaml
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git commit -am "chore: update models.yaml for release ${{ needs.release.outputs.tag }}"
+          git push origin main
+      - name: Attach updated models.yaml to Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ needs.release.outputs.tag }}" models.yaml --clobber
