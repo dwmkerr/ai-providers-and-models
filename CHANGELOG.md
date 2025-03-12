@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.0...v0.1.1) (2025-03-12)
+
+
+### Features
+
+* **node:** basic node demo ([#7](https://github.com/dwmkerr/ai-providers-and-models/issues/7)) ([c8ca4da](https://github.com/dwmkerr/ai-providers-and-models/commit/c8ca4da33ad46fb269c138180c62c2c396385516))
+
+
+### Miscellaneous Chores
+
+* release 0.1.1 ([f8cc4f1](https://github.com/dwmkerr/ai-providers-and-models/commit/f8cc4f1e42ceab116663410713e743b9024a4c80))
+
 ## [0.1.0](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.1...v0.1.0) (2025-03-12)
 
 
