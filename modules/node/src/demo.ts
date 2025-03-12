@@ -6,5 +6,6 @@ for (const provider of providers) {
     console.log(
       `  ${model.validated ? "✅" : "⚠️"} ${model.name} - ${JSON.stringify(model.modalities)}`,
     );
+    console.log("    " + model.description_short);
   }
 }

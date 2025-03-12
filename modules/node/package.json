@@ -7,7 +7,6 @@
   "scripts": {
     "prebuild": "cp ../../models.yaml .",
     "build": "npm run update-models && tsc",
-    "postbuild": "cp models.yaml ./dist",
     "build:watch": "npm run update-models && tsc -w",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",

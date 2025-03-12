@@ -47,7 +47,7 @@ export interface Model {
   name: string;
   docs: string;
   description: string;
-  short_description: string;
+  description_short: string;
   validated: boolean;
   modalities: Modalities;
   endpoints: Endpoints;
