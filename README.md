@@ -1,6 +1,23 @@
 # ai-providers-and-models
 
-Work in progress. Regularly updated list of AI providers and models, available for mulitple languages and platforms.
+Work in progress. Regularly updated list of AI providers and models, available for multiple languages and platforms.
+
+I'm looking for help! Please do contribute if you think this would be useful!
+
+Important:
+
+- Pricing information is best effort from online documentation, be cautious using this data
+- Any model with `validated: true` has been at least partly tested using [Terminal AI](https://github.com/dwmkerr/terminal-ai) and should work for chat and completion API calls
+- This is very much early days work in progress, the schema and API will certainly change
+
+:
+<!-- vim-markdown-toc GFM -->
+
+- [Usage](#usage)
+- [NodeJS](#nodejs)
+- [Status](#status)
+
+<!-- vim-markdown-toc -->
 
 ## Usage
 
@@ -49,3 +66,15 @@ import { providers } from "@dwmkerr/ai-providers-and-models";
 
 console.log(providers);
 ```
+
+## Status
+
+The following models have been validated:
+
+| Model               | Status |
+|---------------------|--------|
+| **OpenAI**          |        |
+| `gpt-4o-2024-08-06` | ✅     |
+| `o3-mini-2025-01-31` | ✅     |
+
+

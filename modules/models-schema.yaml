@@ -54,40 +54,58 @@ properties:
                   output_per_million:
                     type: number
                 required: [input_per_million, output_per_million]
+              validated:
+                type: boolean
+              modalities:
+                type: object
+                properties:
+                  text:
+                    type: boolean
+                  image:
+                    type: boolean
+                  audio:
+                    type: boolean
+                required: [text, image, audio]
               endpoints:
                 type: object
                 properties:
-                  chat:
+                  assistants:
                     type: boolean
-                  completions:
+                  batch:
                     type: boolean
-                  fine_tuning:
+                  completions_legacy:
                     type: boolean
                   embeddings:
                     type: boolean
-                  audio_transcriptions:
+                  fine_tuning:
                     type: boolean
-                  audio_translations:
-                    type: boolean
-                  text_to_speech:
-                    type: boolean
-                  images:
-                    type: boolean
-                  edits:
+                  image_generation:
                     type: boolean
                   moderation:
                     type: boolean
+                  realtime:
+                    type: boolean
+                  respones:
+                    type: boolean
+                  speech_generation:
+                    type: boolean
+                  transcription:
+                    type: boolean
+                  translation:
+                    type: boolean
                 required:
-                  - chat
-                  - completions
-                  - fine_tuning
+                  - assistants
+                  - batch
+                  - completions_legacy
                   - embeddings
-                  - audio_transcriptions
-                  - audio_translations
-                  - text_to_speech
-                  - images
-                  - edits
+                  - fine_tuning
+                  - image_generation
                   - moderation
+                  - realtime
+                  - responses
+                  - speech_generation
+                  - transcription
+                  - translation
               documentation_url:
                 type: string
                 format: uri
@@ -99,6 +117,8 @@ properties:
               - context_window
               - max_output_tokens
               - pricing
+              - validated
+              - modalities
               - endpoints
               - documentation_url
       required:
