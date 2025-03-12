@@ -1,13 +1,15 @@
-version: 0.1.0
+version: 0.1.1
 updated: 2025-03-12T00:00:00.000Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
 providers:
-  - name: openai
+  - id: openai
+    name: OpenAI
     docs: https://platform.openai.com/docs/models
     api_specification: openai/v1
     models:
-      - name: o3-mini
+      - id: o3-mini
+        name: o3-mini
         documentation_url: https://platform.openai.com/docs/models/o3-mini
         description: Fast, flexible, intelligent reasoning model (small o-series model).
         status: preview
@@ -28,7 +30,8 @@ providers:
           images: false
           edits: false
           moderation: false
-      - name: o1
+      - id: o1
+        name: o1
         description: High-intelligence reasoning model (first-generation o-series model).
         status: preview
         knowledge_cutoff: Unknown
@@ -49,7 +52,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/o1
-      - name: gpt-4o
+      - id: gpt-4o
+        name: gpt-4o
         documentation_url: https://platform.openai.com/docs/models/gpt-4o
         description: >-
           OpenAI’s versatile, high-intelligence flagship model (multimodal:
@@ -72,7 +76,8 @@ providers:
           images: false
           edits: false
           moderation: false
-      - name: gpt-4
+      - id: gpt-4
+        name: gpt-4
         description: >-
           Older version of a high-intelligence GPT-4 model (text-only, for Chat
           Completions).
@@ -95,7 +100,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/gpt-4
-      - name: gpt-4-32k
+      - id: gpt-4-32k
+        name: gpt-4-32k
         description: >-
           Variant of GPT-4 with 32k token context window (text-only older
           flagship model).
@@ -118,7 +124,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/gpt-4-32k
-      - name: gpt-4-turbo
+      - id: gpt-4-turbo
+        name: gpt-4-turbo
         description: >-
           Early high-context version of GPT-4 (128k context) introduced as a
           preview model.
@@ -141,7 +148,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/gpt-4-turbo
-      - name: gpt-3.5-turbo
+      - id: gpt-3.5-turbo
+        name: gpt-3.5-turbo
         description: >-
           GPT-3.5 Turbo – legacy GPT model for cheaper chat and non-chat tasks
           (standard 16k context).
@@ -164,7 +172,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/gpt-3.5-turbo
-      - name: gpt-3.5-turbo-instruct
+      - id: gpt-3.5-turbo-instruct
+        name: gpt-3.5-turbo-instruct
         description: >-
           Instruct version of GPT-3.5 Turbo for completions (replacement for
           legacy Codex edit models).
@@ -187,7 +196,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/gpt-3.5-turbo-instruct
-      - name: text-davinci-003
+      - id: text-davinci-003
+        name: text-davinci-003
         description: >-
           Davinci (GPT-3) model fine-tuned for instruction following
           (Completions API).
@@ -210,7 +220,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/text-davinci-003
-      - name: code-davinci-002
+      - id: code-davinci-002
+        name: code-davinci-002
         description: >-
           Davinci-based GPT-3 model fine-tuned for code generation (Completions
           API).
@@ -233,7 +244,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/code-davinci-002
-      - name: text-davinci-edit-001
+      - id: text-davinci-edit-001
+        name: text-davinci-edit-001
         description: GPT-3 based edit model for text editing tasks (used via Edits API).
         status: deprecated
         knowledge_cutoff: June 2021
@@ -254,7 +266,8 @@ providers:
           edits: true
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/edits
-      - name: code-davinci-edit-001
+      - id: code-davinci-edit-001
+        name: code-davinci-edit-001
         description: Codex (GPT-3) based edit model for code editing tasks (Edits API).
         status: deprecated
         knowledge_cutoff: June 2021
@@ -275,7 +288,8 @@ providers:
           edits: true
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/edits
-      - name: text-embedding-3-small
+      - id: text-embedding-3-small
+        name: text-embedding-3-small
         description: >-
           Next-generation small embedding model (optimized for latency and
           storage; ~1536-dimensional embeddings).
@@ -298,7 +312,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/embeddings
-      - name: text-embedding-3-large
+      - id: text-embedding-3-large
+        name: text-embedding-3-large
         description: >-
           Next-generation large embedding model (higher accuracy;
           ~3072-dimensional embeddings).
@@ -321,7 +336,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/embeddings
-      - name: text-embedding-ada-002
+      - id: text-embedding-ada-002
+        name: text-embedding-ada-002
         description: >-
           Legacy Ada-based embedding model (768-dimensional embeddings; replaced
           by v3 models).
@@ -344,7 +360,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/embeddings
-      - name: text-moderation-latest
+      - id: text-moderation-latest
+        name: text-moderation-latest
         description: Latest text-only content moderation model (English).
         status: general-availability
         knowledge_cutoff: Unknown
@@ -365,7 +382,8 @@ providers:
           edits: false
           moderation: true
         documentation_url: https://platform.openai.com/docs/models/moderation
-      - name: text-moderation-stable
+      - id: text-moderation-stable
+        name: text-moderation-stable
         description: Previous-generation stable text moderation model.
         status: legacy
         knowledge_cutoff: Unknown
@@ -386,7 +404,8 @@ providers:
           edits: false
           moderation: true
         documentation_url: https://platform.openai.com/docs/models/moderation
-      - name: omni-moderation-latest
+      - id: omni-moderation-latest
+        name: omni-moderation-latest
         description: >-
           Latest multi-modal moderation model (supports text and images, plus
           new harm categories).
@@ -409,7 +428,8 @@ providers:
           edits: false
           moderation: true
         documentation_url: https://platform.openai.com/docs/models/moderation
-      - name: omni-moderation
+      - id: omni-moderation
+        name: omni-moderation
         description: >-
           Previous snapshot of the omni moderation model (multi-modal
           moderation, initial version).
@@ -432,7 +452,8 @@ providers:
           edits: false
           moderation: true
         documentation_url: https://platform.openai.com/docs/models/moderation
-      - name: whisper-1
+      - id: whisper-1
+        name: whisper-1
         description: >-
           Whisper model for automatic speech recognition (transcribe and
           translate audio to text).
@@ -455,7 +476,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/whisper-1
-      - name: dall-e-3
+      - id: dall-e-3
+        name: dall-e-3
         description: >-
           DALL·E 3 – latest image generation model (generates and edits images
           from text prompts).
@@ -478,7 +500,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/dall-e-3
-      - name: dall-e-2
+      - id: dall-e-2
+        name: dall-e-2
         description: >-
           DALL·E 2 – image generation model (generates and edits images from
           text prompts).
@@ -501,7 +524,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/dall-e-2
-      - name: tts-1
+      - id: tts-1
+        name: tts-1
         description: >-
           Standard text-to-speech model (converts text into natural-sounding
           speech in real-time).
@@ -524,7 +548,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/tts
-      - name: tts-1-hd
+      - id: tts-1-hd
+        name: tts-1-hd
         description: >-
           High-quality text-to-speech model (produces higher fidelity voice
           output, slower).
@@ -547,7 +572,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/tts
-      - name: gpt-4o-search-preview
+      - id: gpt-4o-search-preview
+        name: gpt-4o-search-preview
         description: >-
           GPT-4o model specialized for web search (enables retrieval via
           built-in web browsing tool).
@@ -570,7 +596,8 @@ providers:
           edits: false
           moderation: false
         documentation_url: https://platform.openai.com/docs/models/gpt-4o-search-preview
-      - name: gpt-4o-mini-search-preview
+      - id: gpt-4o-mini-search-preview
+        name: gpt-4o-mini-search-preview
         description: >-
           GPT-4o mini model specialized for web search tasks (fast,
           cost-efficient search-oriented model).
