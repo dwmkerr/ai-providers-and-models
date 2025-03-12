@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: ./artifacts/
+          path: ./modules/node/artifacts/
 
   upload-coverage:
     name: Upload Coverage
@@ -71,4 +71,3 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           directory: ./artifacts/coverage
-          token: ${{ secrets.CODECOV_TOKEN }}
