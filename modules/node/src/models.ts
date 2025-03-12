@@ -22,6 +22,25 @@ export interface Provider {
   models: Model[];
 }
 
+export interface Modalities {
+  text: boolean;
+  image: boolean;
+  audio: boolean;
+}
+
+export interface Endpoints {
+  chat: boolean;
+  completions: boolean;
+  fine_tuning: boolean;
+  embeddings: boolean;
+  audio_transcriptions: boolean;
+  audio_translations: boolean;
+  text_to_speech: boolean;
+  images: boolean;
+  edits: boolean;
+  moderation: boolean;
+}
+
 export interface Model {
   id: string;
   verified: boolean;
@@ -29,8 +48,9 @@ export interface Model {
   docs: string;
   description: string;
   short_description: string;
-  modalities: Record<string, boolean>;
-  endpoints: Record<string, boolean>;
+  validated: boolean;
+  modalities: Modalities;
+  endpoints: Endpoints;
   price?: Pricing;
   context_window_tokens: number;
   max_output_tokens: number;
