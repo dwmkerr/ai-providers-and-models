@@ -1,0 +1,100 @@
+name: "CI/CD: Node Module"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+# Release Please needs permissions to write commits and open PRs.
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_LTS_VERSION: 22.x
+
+jobs:
+  validate:
+    name: Validate
+    defaults:
+      run:
+        working-directory: ./modules/node
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_LTS_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Test with Coverage
+        run: npm run test:cov
+
+      - name: Validate Install
+        continue-on-error: true
+        run: |
+          # Create a test install folder.
+          mkdir test-install
+          cd test-install || exit
+
+          # Install the library.
+          npm install ..
+
+          # Validate we have the index.
+          if [ -f "./node_modules/@dwmkerr/inquirer-advanced-input-prompt/dist/index.js" ]; then
+            echo "index.js is installed successfully."
+          else
+            echo "index.js is missing!"
+            echo "This is likely because 'npm install ..' in a subdir does not actually install the repo, we should install in a sibling dir"
+            ls -al ./node_modules
+            ls -al ./node_modules/@dwmkerr
+            ls -al ./node_modules/@dwmkerr/inq*
+            exit 1
+          fi
+
+          # Clean up.
+          cd ..
+          rm -rf test-install
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: ./artifacts/
+
+  upload-coverage:
+    name: Upload Coverage
+    needs: validate
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ./modules/node
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: ./artifacts
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v5
+        with:
+          directory: ./artifacts/coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
