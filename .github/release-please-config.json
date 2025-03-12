@@ -8,12 +8,12 @@
         {
           "type": "yaml",
           "path": "models.yaml",
-          "version-field": "$.version"
+          "jsonpath": "$.version"
         },
         {
           "type": "json",
           "path": "modules/node/package.json",
-           "jsonpath": "$.version"
+          "jsonpath": "$.version"
         }
       ],
      "changelog-path": "CHANGELOG.md"
