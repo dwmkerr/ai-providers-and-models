@@ -15,10 +15,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: ibiqlik/action-yamllint@v3
-        name: Lint YAML
-        with:
-          file_or_dir: 'model.yaml'
       - name: Setup Python for YAML Linting YAML
         uses: actions/setup-python@v5
         with:
