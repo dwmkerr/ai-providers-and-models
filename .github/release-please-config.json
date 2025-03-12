@@ -6,13 +6,14 @@
       "release-type": "simple",
       "extra-files": [
         {
-          "type": "generic",
+          "type": "yaml",
           "path": "models.yaml",
-          "version-field": "version"
+          "version-field": "$.version"
         },
         {
           "type": "json",
-          "path": "modules/node/package.json"
+          "path": "modules/node/package.json",
+           "jsonpath": "$.version"
         }
       ],
      "changelog-path": "CHANGELOG.md"
