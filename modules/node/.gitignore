@@ -1,4 +1,3 @@
-node_modules/lib/
 node_modules/
 dist/
-coverage/
+artifacts/
