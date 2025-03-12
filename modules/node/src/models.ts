@@ -16,6 +16,7 @@ export interface ProvidersFile {
 }
 
 export interface Provider {
+  id: string;
   name: string;
   docs: string;
   api_specification: string;
@@ -43,7 +44,6 @@ export interface Endpoints {
 
 export interface Model {
   id: string;
-  verified: boolean;
   name: string;
   docs: string;
   description: string;
