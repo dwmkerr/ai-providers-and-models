@@ -1,20 +1,27 @@
 {
   "release-type": "simple",
   "bump-minor-pre-major": true,
-  "extra-files": [
-    {
-      "type": "generic",
-      "path": "models.yaml",
-      "version-field": "version"
-    },
-    {
-      "type": "json",
-      "path": "modules/node/package.json"
-    },
-    {
-      "type": "plain-text",
-      "path": "VERSION.txt"
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "models.yaml",
+          "version-field": "version"
+        },
+        {
+          "type": "json",
+          "path": "modules/node/package.json"
+        },
+        {
+           "type": "plain-text",
+           "path": "VERSION.txt"
+        }
+      ],
+     "changelog-path": "CHANGELOG.md"
     }
-  ],
-  "changelog-path": "CHANGELOG.md"
+  }
 }
+
+
