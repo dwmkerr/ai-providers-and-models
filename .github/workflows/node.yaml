@@ -44,32 +44,6 @@ jobs:
       - name: Test with Coverage
         run: npm run test:cov
 
-      - name: Validate Install
-        continue-on-error: true
-        run: |
-          # Create a test install folder.
-          mkdir test-install
-          cd test-install || exit
-
-          # Install the library.
-          npm install ..
-
-          # Validate we have the index.
-          if [ -f "./node_modules/@dwmkerr/inquirer-advanced-input-prompt/dist/index.js" ]; then
-            echo "index.js is installed successfully."
-          else
-            echo "index.js is missing!"
-            echo "This is likely because 'npm install ..' in a subdir does not actually install the repo, we should install in a sibling dir"
-            ls -al ./node_modules
-            ls -al ./node_modules/@dwmkerr
-            ls -al ./node_modules/@dwmkerr/inq*
-            exit 1
-          fi
-
-          # Clean up.
-          cd ..
-          rm -rf test-install
-
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:

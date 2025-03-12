@@ -15,8 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Python for YAML Linting YAML
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -37,9 +36,40 @@ jobs:
         id: release-please
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: simple
 
-  update-model:
+  release-node:
+    name: Release Node
+    needs: release
+    if: ${{ needs.release.outputs.released }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node for Release
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_LTS_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Build Distributable
+        run: |
+          npm install
+          npm run build
+
+      - name: Publish to NPM
+        run: |
+          if [ "$NODE_AUTH_TOKEN" == "" ]; then
+            echo "The 'NPM_TOKEN' secret must be set to deploy to NPM"
+            exit 1
+          else
+            echo "Publishing to NPM..."
+            npm publish --access=public
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  attach-assets:
     needs: release
     if: ${{ needs.release.outputs.released }}
     runs-on: ubuntu-24.04
@@ -47,34 +77,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Update models.yaml
-        run: |
-          VERSION="${{ needs.release.outputs.tag }}"
-          DATE=$(date +'%Y-%m-%d')
-          sed -i.bak -E \
-            -e "s/^version: .*/version: ${VERSION#v}/" \
-            -e "s/^updated: .*/updated: ${DATE}/" models.yaml
-          rm models.yaml.bak
-      - name: Commit updated models.yaml
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git commit -am "chore: update models.yaml for release ${{ needs.release.outputs.tag }}"
-          git push origin main
-      - name: Attach updated models.yaml to Release
+          ref: main
+      - name: Attach assets to GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release upload "${{ needs.release.outputs.tag }}" models.yaml --clobber
-  update-node-module:
-    needs: release
-    if: ${{ needs.release.outputs.released }}
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Update Node Package Version
-        run: |
-          cd modules/node
-          npm version "${{ needs.release.outputs.tag }}" --no-git-tag-version
-          git add package.json
-          git commit -m "chore: update node package version for release ${{ needs.release.outputs.tag }}"
-          git push origin main
+

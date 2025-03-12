@@ -1,0 +1,22 @@
+{
+  "release-type": "simple",
+  "bump-minor-pre-major": true,
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "models.yaml",
+          "version-field": "version"
+        },
+        {
+          "type": "json",
+          "path": "modules/node/package.json"
+        }
+      ]
+    }
+  }
+}
+
+
