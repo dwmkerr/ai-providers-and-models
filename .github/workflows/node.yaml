@@ -1,0 +1,74 @@
+name: "CI/CD: Node Module"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+# Release Please needs permissions to write commits and open PRs.
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_LTS_VERSION: 22.x
+
+jobs:
+  validate:
+    name: Validate
+    defaults:
+      run:
+        working-directory: ./modules/node
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_LTS_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Test with Coverage
+        run: npm run test:cov
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: ./artifacts/
+
+  upload-coverage:
+    name: Upload Coverage
+    needs: validate
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ./modules/node
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: ./artifacts
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v5
+        with:
+          directory: ./artifacts/coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
