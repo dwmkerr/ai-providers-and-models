@@ -13,8 +13,13 @@
         {
           "type": "json",
           "path": "modules/node/package.json"
+        },
+        {
+           "type": "plain-text",
+           "path": "VERSION.txt"
         }
-      ]
+      ],
+     "changelog-path": "CHANGELOG.md"
     }
   }
 }
