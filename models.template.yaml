@@ -1,0 +1,208 @@
+version: 0.1.0
+updated: 2025-03-12
+source: https://github.com/dwmkerr/ai-providers-and-models
+author: dwmkerr
+providers:
+  - name: openai
+    docs: https://platform.openai.com/docs/models
+    api_specification: openai/v1
+    models:
+      - id: gpt-4
+        verified: false
+        name: GPT-4
+        docs: https://platform.openai.com/docs/models/gpt-4
+        description: A large multimodal model accepting text and image inputs, known for reliability and creativity.
+        short_description: Reliable and creative, accepts text and images.
+        modalities:
+          text: true
+          image: true
+          audio: false
+        endpoints:
+          chat_completions: true
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: false
+          transcription: false
+          moderation: false
+        price:
+          per_million_input_tokens: 30000
+          per_million_output_tokens: 60000
+        context_window_tokens: 8192
+        max_output_tokens: 2048
+      - id: gpt-4-32k
+        verified: false
+        name: GPT-4 32k
+        docs: https://platform.openai.com/docs/models/gpt-4
+        description: A variant of GPT-4 with an extended context window, allowing for processing of longer inputs and outputs.
+        short_description: Extended context window for longer texts.
+        modalities:
+          text: true
+          image: true
+          audio: false
+        endpoints:
+          chat_completions: true
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: false
+          transcription: false
+          moderation: false
+        price:
+          per_million_input_tokens: 60000
+          per_million_output_tokens: 120000
+        context_window_tokens: 32768
+        max_output_tokens: 2048
+      - id: gpt-3.5-turbo
+        verified: false
+        name: GPT-3.5 Turbo
+        docs: https://platform.openai.com/docs/models/gpt-3-5
+        description: An optimized version of GPT-3.5, designed for faster performance and cost-effectiveness in chat applications.
+        short_description: Fast and cost-effective chat model.
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          chat_completions: true
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: true
+          image_generation: false
+          transcription: false
+          moderation: false
+        price:
+          per_million_input_tokens: 1500
+          per_million_output_tokens: 2000
+        context_window_tokens: 4096
+        max_output_tokens: 2048
+      - id: gpt-3.5-turbo-16k
+        verified: false
+        name: GPT-3.5 Turbo 16k
+        docs: https://platform.openai.com/docs/models/gpt-3-5
+        description: A variant of GPT-3.5 Turbo with an extended context window, suitable for handling longer conversations and documents.
+        short_description: Extended context for longer texts.
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          chat_completions: true
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: true
+          image_generation: false
+          transcription: false
+          moderation: false
+        price:
+          per_million_input_tokens: 3000
+          per_million_output_tokens: 4000
+        context_window_tokens: 16384
+        max_output_tokens: 2048
+      - id: text-davinci-003
+        verified: false
+        name: Text-DaVinci-003
+        docs: https://platform.openai.com/docs/models/davinci
+        description: A highly capable language model in the GPT-3.5 series, known for producing high-quality, longer outputs and consistent instruction-following.
+        short_description: High-quality outputs with consistent instructions.
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          chat_completions: false
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: true
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: false
+          transcription: false
+          moderation: false
+        price:
+          per_million_input_tokens: 30000
+          per_million_output_tokens: 60000
+        context_window_tokens: 4097
+        max_output_tokens: 2048
+      - id: text-davinci-002
+        verified: false
+        name: Text-DaVinci-002
+        docs: https://platform.openai.com/docs/models/davinci
+        description: An earlier version of the DaVinci series, trained with supervised fine-tuning, offering strong language capabilities.
+        short_description: Earlier version with strong language skills.
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          chat_completions: false
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: true
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: false
+          transcription: false
+          moderation: false
+        price:
+          per_million_input_tokens: 30000
+          per_million_output_tokens: 60000
+        context_window_tokens: 4097
+        max_output_tokens: 2048
+      - id: code-davinci-002
+        verified: false
+        name: Code-DaVinci-002
+        docs: https://platform.openai.com/docs/models/codex
+        description: A model from the Codex series, optimized for code completion tasks in various programming languages.
+        short_description: Optimized for code completion tasks.
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          chat_completions: false
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: true
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation:
+# ERROR
+# At this point output ends and we get the following:
+# ::contentReference[oaicite:0]{index=0}

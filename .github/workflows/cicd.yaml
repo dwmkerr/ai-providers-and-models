@@ -19,12 +19,16 @@ jobs:
         name: Lint YAML
         with:
           file_or_dir: 'model.yaml'
-      - uses: nwisbeta/validate-yaml-schema@v2
-        name: Validate YAML Schema
+      - name: Setup Python for YAML Linting YAML
+        uses: actions/setup-python@v5
         with:
-          yamlSchemaFile: ./.github/workflows/schema.yaml
-          yamlFiles: models.yaml
-        continue-on-error: true
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Lint YAML
+      - run: |
+          cd modules/validate-schema
+          pip install -r requirements.txt
+./validate.py ../../models.yaml ../models-schema.yaml
 
   release:
     needs: validate
@@ -66,3 +70,15 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release upload "${{ needs.release.outputs.tag }}" models.yaml --clobber
+  update-node-module:
+    needs: release
+    if: ${{ needs.release.outputs.released }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Update Node Package Version
+        run: |
+          cd modules/node
+          npm version "${{ needs.release.outputs.tag }}" --no-git-tag-version
+          git add package.json
+          git commit -m "chore: update node package version for release ${{ needs.release.outputs.tag }}"
+          git push origin main

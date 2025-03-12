@@ -1,39 +1,110 @@
-ModelSchema:
-  type: sequence
-  sequence:
-    - type: mapping
-      mapping:
-        model_id:
-          type: str
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+properties:
+  version:
+    type: string
+    pattern: "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+  updated:
+    type: string
+    format: date
+  source:
+    type: string
+    format: uri
+  author:
+    type: string
+  providers:
+    type: array
+    items:
+      type: object
+      properties:
         name:
-          type: str
-        documentation_link:
-          type: str
-        description_short:
-          type: str
-        description_long:
-          type: str
-        modalities:
-          type: sequence
-          sequence:
-            - type: str
-        api_endpoints:
-          type: sequence
-          sequence:
-            - type: str
-        pricing_per_million_tokens:
-          type: mapping
-          mapping:
-            input:
-              type: int
-            output:
-              type: int
-        context_window:
-          type: int
-        max_output_tokens:
-          type: int
-        release_date:
-          type: str    # Date in YYYY-MM-DD format
-        known_limitations:
-          type: str
-
+          type: string
+        docs:
+          type: string
+          format: uri
+        api_specification:
+          type: string
+        models:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              status:
+                type: string
+                enum: [preview, general-availability, legacy, deprecated]
+              knowledge_cutoff:
+                type: string
+              context_window:
+                type: integer
+              max_output_tokens:
+                type: integer
+              pricing:
+                type: object
+                properties:
+                  input_per_million:
+                    type: number
+                  output_per_million:
+                    type: number
+                required: [input_per_million, output_per_million]
+              endpoints:
+                type: object
+                properties:
+                  chat:
+                    type: boolean
+                  completions:
+                    type: boolean
+                  fine_tuning:
+                    type: boolean
+                  embeddings:
+                    type: boolean
+                  audio_transcriptions:
+                    type: boolean
+                  audio_translations:
+                    type: boolean
+                  text_to_speech:
+                    type: boolean
+                  images:
+                    type: boolean
+                  edits:
+                    type: boolean
+                  moderation:
+                    type: boolean
+                required:
+                  - chat
+                  - completions
+                  - fine_tuning
+                  - embeddings
+                  - audio_transcriptions
+                  - audio_translations
+                  - text_to_speech
+                  - images
+                  - edits
+                  - moderation
+              documentation_url:
+                type: string
+                format: uri
+            required:
+              - name
+              - description
+              - status
+              - knowledge_cutoff
+              - context_window
+              - max_output_tokens
+              - pricing
+              - endpoints
+              - documentation_url
+      required:
+        - name
+        - docs
+        - api_specification
+        - models
+required:
+  - version
+  - updated
+  - source
+  - author
+  - providers

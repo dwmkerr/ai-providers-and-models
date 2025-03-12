@@ -38,6 +38,4 @@ providers:
 
       - id: gpt-4-32k
         # etc...
-# ERROR
-# At this point output ends and we get the following:
-# ::contentReference[oaicite:0]{index=0}
+```
