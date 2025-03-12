@@ -1,0 +1,116 @@
+version: 0.1.0
+updated: 2025-03-12
+source: mygithubrepo
+providers:
+  - name: openai
+    docs: https://platform.openai.com/docs/models
+    models:
+      - name: gpt-4
+        docs: https://platform.openai.com/docs/models/gpt-4
+        description: A large multimodal model accepting text and image inputs, known for reliability and creativity.
+        modalities:
+          text: true
+          image: true
+          audio: false
+        endpoints:
+          chat_completions: true
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: false
+          transcription: false
+          moderation: false
+
+      - name: gpt-3.5-turbo
+        docs: https://platform.openai.com/docs/models/gpt-3-5
+        description: A capable and cost-effective model for text-based tasks.
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          chat_completions: true
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: false
+          transcription: false
+          moderation: false
+
+      - name: text-davinci-003
+        docs: https://platform.openai.com/docs/models/gpt-3
+        description: A powerful text completion model from the GPT-3 family.
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          chat_completions: false
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: true
+          responses: false
+          assistants: false
+          fine_tuning: true
+          image_generation: false
+          transcription: false
+          moderation: false
+
+      - name: dall-e
+        docs: https://platform.openai.com/docs/models/dall-e
+        description: An image generation model capable of creating visuals from textual descriptions.
+        modalities:
+          text: false
+          image: true
+          audio: false
+        endpoints:
+          chat_completions: false
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: true
+          transcription: false
+          moderation: false
+
+      - name: whisper
+        docs: https://platform.openai.com/docs/models/whisper
+        description: A speech recognition and transcription model.
+        modalities:
+          text: false
+          image: false
+          audio: true
+        endpoints:
+          chat_completions: false
+          realtime: false
+          batch: false
+          embeddings: false
+          speech_generation: false
+          translation: false
+          completions_legacy: false
+          responses: false
+          assistants: false
+          fine_tuning: false
+          image_generation: false
+          transcription: true
+          moderation: false
