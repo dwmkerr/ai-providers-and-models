@@ -7,7 +7,7 @@ export interface Pricing {
   per_million_output_tokens?: number;
 }
 
-export interface Providers {
+export interface ProvidersFile {
   version: string;
   updated: string;
   source: string;
@@ -22,7 +22,6 @@ export interface Provider {
   models: Model[];
 }
 
-// Exported TypeScript type definition (simplified, extend as needed)
 export interface Model {
   id: string;
   verified: boolean;
@@ -37,14 +36,8 @@ export interface Model {
   max_output_tokens: number;
 }
 
-// Models.yaml as JS object
-export const modelsData = YAML.parse(
-  fs.readFileSync(path.join(__dirname, "../../models.yaml"), "utf8"),
+export const providersFile: ProvidersFile = YAML.parse(
+  fs.readFileSync(path.join(__dirname, "../models.yaml"), "utf8"),
 );
 
-export const providersData: Providers = YAML.parse(
-  fs.readFileSync(path.join(__dirname, "../../models.yaml"), "utf8"),
-);
-
-// Convenient named exports
-export const providers: Provider[] = providersData.providers;
+export const providers: Provider[] = providersFile.providers;
