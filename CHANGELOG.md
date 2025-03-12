@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.3...v0.1.4) (2025-03-12)
+
+
+### Features
+
+* ids and models ([#11](https://github.com/dwmkerr/ai-providers-and-models/issues/11)) ([d748cd7](https://github.com/dwmkerr/ai-providers-and-models/commit/d748cd77fe08c6b8949c5a06ff9833e0c198b692))
+
 ## [0.1.3](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.2...v0.1.3) (2025-03-12)
 
 
