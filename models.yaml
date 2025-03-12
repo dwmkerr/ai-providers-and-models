@@ -8,6 +8,7 @@ providers:
     api_specification: openai/v1
     models:
       - name: o3-mini
+        documentation_url: "https://platform.openai.com/docs/models/o3-mini"
         description: "Fast, flexible, intelligent reasoning model (small o-series model)."
         status: preview
         knowledge_cutoff: "October 2023"
@@ -27,7 +28,6 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/o3-mini"
 
       - name: o1
         description: "High-intelligence reasoning model (first-generation o-series model)."
@@ -52,6 +52,7 @@ providers:
         documentation_url: "https://platform.openai.com/docs/models/o1"
 
       - name: gpt-4o
+        documentation_url: "https://platform.openai.com/docs/models/gpt-4o"
         description: "OpenAI’s versatile, high-intelligence flagship model (multimodal: accepts text and image inputs, outputs text)."
         status: general-availability
         knowledge_cutoff: "September 30, 2023"
@@ -71,7 +72,6 @@ providers:
           images: false
           edits: false
           moderation: false
-        documentation_url: "https://platform.openai.com/docs/models/gpt-4o"
 
       - name: gpt-4
         description: "Older version of a high-intelligence GPT-4 model (text-only, for Chat Completions)."

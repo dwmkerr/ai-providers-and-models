@@ -1,6 +1,6 @@
 export default {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  testMatch: ['**/?(*.)+(spec|test).ts'],
-  coverageDirectory: './coverage'
+  preset: "ts-jest",
+  testEnvironment: "node",
+  testMatch: ["**/?(*.)+(spec|test).ts"],
+  coverageDirectory: "./coverage",
 };
