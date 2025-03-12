@@ -43,6 +43,9 @@ jobs:
     needs: release
     if: ${{ needs.release.outputs.released }}
     runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ./modules/node
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -84,4 +87,3 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release upload "${{ needs.release.outputs.tag }}" models.yaml --clobber
-
