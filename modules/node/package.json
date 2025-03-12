@@ -22,7 +22,8 @@
     "update-models": "cp ../../models.yaml ."
   },
   "files": [
-    "dist"
+    "dist",
+    "models.yaml"
   ],
   "author": "dwmkerr",
   "license": "MIT",
