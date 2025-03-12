@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -18,12 +19,13 @@ jobs:
         name: Lint YAML
         with:
           file_or_dir: 'model.yaml'
-    - uses: nwisbeta/validate-yaml-schema@v2
-      name: Validate YAML Schema
-      with:
-        yamlSchemaFile: ./.github/workflows/schema.yaml
-        yamlFiles: models.yaml
-      continue-on-error: true
+      - uses: nwisbeta/validate-yaml-schema@v2
+        name: Validate YAML Schema
+        with:
+          yamlSchemaFile: ./.github/workflows/schema.yaml
+          yamlFiles: models.yaml
+        continue-on-error: true
+
   release:
     needs: validate
     runs-on: ubuntu-24.04
