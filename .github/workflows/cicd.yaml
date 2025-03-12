@@ -15,9 +15,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ibiqlik/action-yamllint@v3
+        name: Lint YAML
         with:
           file_or_dir: 'model.yaml'
-
+    - uses: nwisbeta/validate-yaml-schema@v2
+      name: Validate YAML Schema
+      with:
+        yamlSchemaFile: ./.github/workflows/schema.yaml
+        yamlFiles: models.yaml
+      continue-on-error: true
   release:
     needs: validate
     runs-on: ubuntu-24.04
