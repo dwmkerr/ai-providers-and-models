@@ -17,6 +17,8 @@ properties:
     items:
       type: object
       properties:
+        id:
+          type: string
         name:
           type: string
         docs:
@@ -29,6 +31,8 @@ properties:
           items:
             type: object
             properties:
+              id:
+                type: string
               name:
                 type: string
               description:

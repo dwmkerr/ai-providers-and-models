@@ -39,3 +39,13 @@ providers:
       - id: gpt-4-32k
         # etc...
 ```
+
+## NodeJS
+
+Usage:
+
+```node
+import { providers } from "@dwmkerr/ai-providers-and-models";
+
+console.log(providers);
+```

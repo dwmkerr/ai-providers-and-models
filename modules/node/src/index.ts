@@ -1,1 +1,1 @@
-export { Model, models, modelsData } from "./models";
+export { providersFile, providers } from "./models";
