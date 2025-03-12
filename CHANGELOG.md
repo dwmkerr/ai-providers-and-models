@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.5](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.4...v0.1.5) (2025-03-12)
+
+
+### Bug Fixes
+
+* **node:** fixed 'description_short' ([7f63ff9](https://github.com/dwmkerr/ai-providers-and-models/commit/7f63ff91b1a837ef15bee8e7f0f085c26500ccca))
+* **node:** missing models.yaml in node ([c654bf4](https://github.com/dwmkerr/ai-providers-and-models/commit/c654bf4c6b6d5bd15a76cbbf0273eba90b90e2da))
+
+
+### Miscellaneous Chores
+
+* release 0.1.5 ([9d75a6b](https://github.com/dwmkerr/ai-providers-and-models/commit/9d75a6bf21bbd544457d12bb5b9bcf8c0a8df51b))
+
 ## [0.1.4](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.3...v0.1.4) (2025-03-12)
 
 
