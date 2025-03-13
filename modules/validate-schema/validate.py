@@ -31,12 +31,13 @@ def validate(yaml_data, schema, yaml_file, schema_file):
     """Validate YAML data against a JSON schema and print a summary."""
     try:
         jsonschema.validate(instance=yaml_data, schema=schema)
-        total_providers = len(yaml_data.get("providers", []))
+        providers_dict = yaml_data.get("providers", {})
+        total_providers = len(providers_dict)
         total_models = sum(
-            len(p["models"]) for p in yaml_data.get("providers", [])
+            len(p["models"]) for p in providers_dict.values()
         )
         total_fields = sum(
-            count_fields(p["models"]) for p in yaml_data.get("providers", [])
+            count_fields(list(p["models"].values())) for p in providers_dict.values()
         )
 
         print("✅ Validation Passed!")
@@ -52,7 +53,6 @@ def validate(yaml_data, schema, yaml_file, schema_file):
         print(f"   At YAML path: {error_path}")
         print(f"   Schema rule location: {schema_path}")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
