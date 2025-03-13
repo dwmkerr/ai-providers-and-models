@@ -146,3 +146,68 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
+
+      "gpt-4o-mini-2024-07-18":
+        id: gpt-4o-mini-2024-07-18
+        name: GPT-4o mini
+        documentation_url: https://platform.openai.com/docs/models/gpt-4o-mini
+        description_short: Fast, affordable small model for focused tasks
+        description: >-
+          GPT-4o mini (“o” for “omni”) is a fast, affordable small model for focused tasks. It accepts both text and image inputs, and produces text outputs (including Structured Outputs). It is ideal for fine-tuning, and model outputs from a larger model like GPT-4o can be distilled to GPT-4o-mini to produce similar results at lower cost and latency.
+        status: preview
+        knowledge_cutoff: Oct 01, 2023
+        context_window: 128000
+        max_output_tokens: 16384
+        validated: false
+        pricing:
+          input_per_million: 0.15
+          output_per_million: 0.6
+        modalities:
+          text: true
+          image: true
+          audio: false
+        endpoints:
+          assistants: true
+          batch: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+
+      "gpt-4-0613":
+        id: gpt-4-0613
+        name: GPT-4
+        documentation_url: https://platform.openai.com/docs/models/gpt-4
+        description_short: An older high-intelligence GPT model
+        description: GPT-4 is an older version of a high-intelligence GPT model, usable in Chat Completions.
+        status: general-availability
+        knowledge_cutoff: Dec 01, 2023
+        context_window: 8192
+        max_output_tokens: 8192
+        validated: true
+        pricing:
+          input_per_million: 30
+          output_per_million: 60
+        modalities:
+          text: true
+          image: false
+          audio: false
+        endpoints:
+          assistants: true
+          batch: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false

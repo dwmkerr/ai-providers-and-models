@@ -2,13 +2,9 @@
 
 Work in progress. Regularly updated list of AI providers and models, available for multiple languages and platforms.
 
-I'm looking for help! Please do contribute if you think this would be useful!
+> [!CAUTION]
+> This project is in the early stages, the API will most likely change. Please contribute or share if you can!
 
-Important:
-
-- This is very much early days work in progress, the schema and API will certainly change
-
-:
 <!-- vim-markdown-toc GFM -->
 
 - [Usage](#usage)
@@ -94,17 +90,19 @@ The following models have been validated:
 - ✅ indicates that I have checked the features, pricing and context limits, however, there is always room for human error so be particularly careful and double check pricing.
 - 🧠 indicates has been at least partly tested using [Terminal AI](https://github.com/dwmkerr/terminal-ai) and should work for chat and completion API calls.
 
-| Name                                                                       | Model                                    | Status                  |
-|----------------------------------------------------------------------------|------------------------------------------|-------------------------|
-| **OpenAI**                                                                 |                                          |                         |
-| [GPT-4o](https://platform.openai.com/docs/models/gpt-4o)                   | `gpt-4o-2024-08-06` (default)            | ✅ 🧠                   |
-| [GPT-4.5 Preview](https://platform.openai.com/docs/models/gpt-4.5-preview) | `gpt-4.5-preview-2025-02-27` (default)   | ⚠️  (Testing in Process) |
-| ChatGPT o1](https://platform.openai.com/docs/models/o1)                    | `o1-2024-12-17` (default)                | ✅ 🧠                  |
-| ChatGPT o3-mini                                                            |                                          | ❌                      |
-| ChatGPT o3-mini                                                            |                                          | ❌                      |
-| ChatGPT o3-mini-high                                                       |                                          | ❌                      |
-| ChatGPT 4o mini                                                            |                                          | ❌                      |
-| ChatGPT 4                                                                  |                                          | ❌                      |
-| [o3-mini](https://platform.openai.com/docs/models/o3-mini)                 | `o3-mini-2025-01-31`           (default) | ✅                      |
+| Name                                                                       | Model                                                           | Status                  |
+|----------------------------------------------------------------------------|-----------------------------------------------------------------|-------------------------|
+| **OpenAI**                                                                 |                                                                 |                         |
+| [GPT-4o](https://platform.openai.com/docs/models/gpt-4o)                   | `gpt-4o-2024-08-06` (default)                                   | ✅ 🧠                   |
+| [GPT-4.5 Preview](https://platform.openai.com/docs/models/gpt-4.5-preview) | `gpt-4.5-preview-2025-02-27` (default)                          | ⚠️  (Testing in Process) |
+| ChatGPT o1](https://platform.openai.com/docs/models/o1)                    | `o1-2024-12-17` (default)                                       | ✅ 🧠                   |
+| [ChatGPT o3-mini](https://platform.openai.com/docs/models/o3-mini)         | `o3-mini-2025-01-31` (default)                                  | ✅ 🧠                   |
+| [ChatGPT o3-mini-high](https://platform.openai.com/docs/models/o3-mini)    | `o3-mini-2025-01-31` (default) set `reasoning_effort` to `high` | ✅ 🧠                   |
+| [ChatGPT 4o mini](https://platform.openai.com/docs/models/gpt-4o-mini)     | `gpt-4o-mini-2024-07-18` (default)                              | ✅ 🧠                   |
+| [ChatGPT 4](https://platform.openai.com/docs/models/gpt-4)                 | `gpt-4-0613` (default)                                          | ❌                      |
 
+**o3-mini-high**
 
+This model is simply **o3-mini** with `reasoning_effort` set to `high`.
+
+Details: https://community.openai.com/t/is-03-mini-in-the-api-the-low-medium-or-high-version/1110423/2
