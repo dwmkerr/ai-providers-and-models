@@ -21,12 +21,12 @@ providers:
           tasks, and is our most capable model outside of our o-series models.
         status: general-availability
         knowledge_cutoff: September 30, 2023
-        context_window: 131072
-        max_output_tokens: 8192
+        context_window: 128000
+        max_output_tokens: 16384 
         validated: true
         pricing:
-          input_per_million: 5
-          output_per_million: 15
+          input_per_million: 2.5
+          output_per_million: 10
         modalities:
           text: true
           image: false
@@ -54,12 +54,12 @@ providers:
           GPT-4.5 is the latest iteration in the GPT series, offering significant improvements in reasoning, factual accuracy, and multi-turn conversational capabilities over previous models. Building on the advancements of GPT-4, it delivers faster performance and refined outputs. Currently in preview, it provides a glimpse into the future of AI-driven interactions.
         status: preview
         knowledge_cutoff: April 2024
-        context_window: 8192
-        max_output_tokens: 8192
+        context_window: 128000
+        max_output_tokens: 16384
         validated: false
         pricing:
-          input_per_million: 4
-          output_per_million: 12
+          input_per_million: 75
+          output_per_million: 150
         modalities:
           text: true
           image: false
@@ -91,11 +91,11 @@ providers:
         status: preview
         validated: true
         knowledge_cutoff: October 2023
-        context_window: 131072
-        max_output_tokens: 8192
+        context_window: 200000
+        max_output_tokens: 100000
         pricing:
-          input_per_million: 0.15
-          output_per_million: 0.6
+          input_per_million: 1.1
+          output_per_million: 4.4
         modalities:
           text: true
           image: false
@@ -106,6 +106,39 @@ providers:
           completions_legacy: false
           embeddings: false
           fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+
+      "o1-2024-12-17":
+        id: o1-2024-12-17
+        name: o1
+        documentation_url: https://platform.openai.com/docs/models/o1
+        description_short: High-intelligence reasoning model
+        description: >-
+          The o1 series of models are trained with reinforcement learning to perform complex reasoning. o1 models think before they answer, producing a long internal chain of thought before responding to the user.
+        status: general-availability
+        knowledge_cutoff: September 30, 2023
+        context_window: 200000
+        max_output_tokens: 100000
+        validated: true
+        pricing:
+          input_per_million: 15
+          output_per_million: 60
+        modalities:
+          text: true
+          image: true
+          audio: false
+        endpoints:
+          assistants: true
+          batch: false
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
           image_generation: false
           moderation: false
           realtime: false

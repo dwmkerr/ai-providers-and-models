@@ -6,7 +6,7 @@ describe("models", () => {
       const openai = providers["openai"];
       expect(openai).not.toBeUndefined();
       expect(openai.name).toBe("OpenAI");
-      expect(Object.keys(openai.models).length).toBe(3);
+      expect(Object.keys(openai.models).length).toBe(4);
     });
   });
 
