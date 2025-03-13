@@ -14,6 +14,7 @@
     "prepublishOnly": "npm run build && npm run lint && npm run test",
     "start": "ts-node src/demo.ts",
     "start:debug": "node --inspect-brk node_modules/.bin/ts-node ./src/demo.ts",
+    "pretest": "cp ../../models.yaml .",
     "test": "jest --coverage",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand --no-coverage",
