@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.7](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.6...v0.1.7) (2025-03-13)
+
+
+### Features
+
+* 03 mini, 4o, 4o-mini ([200a481](https://github.com/dwmkerr/ai-providers-and-models/commit/200a481ce23a02a17a7b11bedc66968bff5a0231))
+* more models ([#17](https://github.com/dwmkerr/ai-providers-and-models/issues/17)) ([8624e2a](https://github.com/dwmkerr/ai-providers-and-models/commit/8624e2afc27720d627100bb2e6e6522cb99cfec5))
+* providers and models dict ([#15](https://github.com/dwmkerr/ai-providers-and-models/issues/15)) ([45f9f2d](https://github.com/dwmkerr/ai-providers-and-models/commit/45f9f2dbe859fbe9720182fed4402e52e2fb4bd4))
+
+
+### Miscellaneous Chores
+
+* release 0.1.7 ([02f9ca0](https://github.com/dwmkerr/ai-providers-and-models/commit/02f9ca025e45018af4edfa6bd272760de376f16e))
+* release 0.1.7 ([3caeb63](https://github.com/dwmkerr/ai-providers-and-models/commit/3caeb63a932ced4c52900c46cebca41765350bbc))
+
 ## [0.1.6](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.5...v0.1.6) (2025-03-12)
 
 

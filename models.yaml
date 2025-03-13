@@ -1,4 +1,4 @@
-version: 0.1.6
+version: 0.1.7
 updated: 2025-03-12T00:00:00.000Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
@@ -9,7 +9,7 @@ providers:
     docs: https://platform.openai.com/docs/models
     api_specification: openai/v1
     models:
-      "gpt-4o-2024-08-06":
+      gpt-4o-2024-08-06:
         id: gpt-4o-2024-08-06
         name: GPT-4o
         documentation_url: https://platform.openai.com/docs/models/gpt-4o
@@ -22,7 +22,7 @@ providers:
         status: general-availability
         knowledge_cutoff: September 30, 2023
         context_window: 128000
-        max_output_tokens: 16384 
+        max_output_tokens: 16384
         validated: true
         pricing:
           input_per_million: 2.5
@@ -44,14 +44,20 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-      "gpt-4.5-preview":
+      gpt-4.5-preview:
         id: gpt-4.5-preview
         name: GPT-4.5
         documentation_url: https://platform.openai.com/docs/models/gpt-4.5-preview
-        description_short: Enhanced GPT model with improved reasoning and conversational abilities
+        description_short: >-
+          Enhanced GPT model with improved reasoning and conversational
+          abilities
         description: >-
-          GPT-4.5 is the latest iteration in the GPT series, offering significant improvements in reasoning, factual accuracy, and multi-turn conversational capabilities over previous models. Building on the advancements of GPT-4, it delivers faster performance and refined outputs. Currently in preview, it provides a glimpse into the future of AI-driven interactions.
+          GPT-4.5 is the latest iteration in the GPT series, offering
+          significant improvements in reasoning, factual accuracy, and
+          multi-turn conversational capabilities over previous models. Building
+          on the advancements of GPT-4, it delivers faster performance and
+          refined outputs. Currently in preview, it provides a glimpse into the
+          future of AI-driven interactions.
         status: preview
         knowledge_cutoff: April 2024
         context_window: 128000
@@ -77,8 +83,7 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-      "o3-mini-2025-01-31":
+      o3-mini-2025-01-31:
         id: o3-mini-2025-01-31
         name: o3-mini
         documentation_url: https://platform.openai.com/docs/models/o3-mini
@@ -113,14 +118,16 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-      "o1-2024-12-17":
+      o1-2024-12-17:
         id: o1-2024-12-17
         name: o1
         documentation_url: https://platform.openai.com/docs/models/o1
         description_short: High-intelligence reasoning model
         description: >-
-          The o1 series of models are trained with reinforcement learning to perform complex reasoning. o1 models think before they answer, producing a long internal chain of thought before responding to the user.
+          The o1 series of models are trained with reinforcement learning to
+          perform complex reasoning. o1 models think before they answer,
+          producing a long internal chain of thought before responding to the
+          user.
         status: general-availability
         knowledge_cutoff: September 30, 2023
         context_window: 200000
@@ -146,14 +153,18 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-      "gpt-4o-mini-2024-07-18":
+      gpt-4o-mini-2024-07-18:
         id: gpt-4o-mini-2024-07-18
         name: GPT-4o mini
         documentation_url: https://platform.openai.com/docs/models/gpt-4o-mini
         description_short: Fast, affordable small model for focused tasks
         description: >-
-          GPT-4o mini (“o” for “omni”) is a fast, affordable small model for focused tasks. It accepts both text and image inputs, and produces text outputs (including Structured Outputs). It is ideal for fine-tuning, and model outputs from a larger model like GPT-4o can be distilled to GPT-4o-mini to produce similar results at lower cost and latency.
+          GPT-4o mini (“o” for “omni”) is a fast, affordable small model for
+          focused tasks. It accepts both text and image inputs, and produces
+          text outputs (including Structured Outputs). It is ideal for
+          fine-tuning, and model outputs from a larger model like GPT-4o can be
+          distilled to GPT-4o-mini to produce similar results at lower cost and
+          latency.
         status: preview
         knowledge_cutoff: Oct 01, 2023
         context_window: 128000
@@ -179,13 +190,14 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-      "gpt-4-0613":
+      gpt-4-0613:
         id: gpt-4-0613
         name: GPT-4
         documentation_url: https://platform.openai.com/docs/models/gpt-4
         description_short: An older high-intelligence GPT model
-        description: GPT-4 is an older version of a high-intelligence GPT model, usable in Chat Completions.
+        description: >-
+          GPT-4 is an older version of a high-intelligence GPT model, usable in
+          Chat Completions.
         status: general-availability
         knowledge_cutoff: Dec 01, 2023
         context_window: 8192
