@@ -64,17 +64,28 @@ Usage:
 ```node
 import { providers } from "@dwmkerr/ai-providers-and-models";
 
-console.log(providers);
+//  Retrieve a specific model by provider and model id.
+const model = providers["openai"].models["gpt-4.5-preview"];
+console.log(model);
+
+//  Loop through all providers and models.
 ```
 
 ## Status
 
 The following models have been validated:
 
-| Model               | Status |
-|---------------------|--------|
-| **OpenAI**          |        |
-| `gpt-4o-2024-08-06` | ✅     |
-| `o3-mini-2025-01-31` | ✅     |
+| Name                                                                       | Model                                    | Status                  |
+|----------------------------------------------------------------------------|------------------------------------------|-------------------------|
+| **OpenAI**                                                                 |                                          |                         |
+| [GPT-4o](https://platform.openai.com/docs/models/gpt-4o)                   | `gpt-4o-2024-08-06` (default)            | ✅                      |
+| [GPT-4.5 Preview](https://platform.openai.com/docs/models/gpt-4.5-preview) | `gpt-4.5-preview-2025-02-27` (default)   | ⚠️  (Testing in Process) |
+| ChatGPT o1                                                                 |   `o1-2024-12-17` (default)                                       | ❌                      |
+| ChatGPT o3-mini                                                            |                                          | ❌                      |
+| ChatGPT o3-mini                                                            |                                          | ❌                      |
+| ChatGPT o3-mini-high                                                       |                                          | ❌                      |
+| ChatGPT 4o mini                                                            |                                          | ❌                      |
+| ChatGPT 4                                                                  |                                          | ❌                      |
+| [o3-mini](https://platform.openai.com/docs/models/o3-mini)                 | `o3-mini-2025-01-31`           (default) | ✅                      |
 
 

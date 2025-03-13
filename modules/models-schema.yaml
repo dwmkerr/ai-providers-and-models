@@ -13,8 +13,8 @@ properties:
   author:
     type: string
   providers:
-    type: array
-    items:
+    type: object
+    additionalProperties:
       type: object
       properties:
         id:
@@ -27,8 +27,8 @@ properties:
         api_specification:
           type: string
         models:
-          type: array
-          items:
+          type: object
+          additionalProperties:
             type: object
             properties:
               id:
@@ -85,7 +85,7 @@ properties:
                     type: boolean
                   realtime:
                     type: boolean
-                  respones:
+                  responses:
                     type: boolean
                   speech_generation:
                     type: boolean
@@ -121,7 +121,10 @@ properties:
               - modalities
               - endpoints
               - documentation_url
+          required: [ ]
+        # Provider-level required properties
       required:
+        - id
         - name
         - docs
         - api_specification
