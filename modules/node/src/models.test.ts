@@ -8,6 +8,13 @@ describe("models", () => {
       expect(openai.name).toBe("OpenAI");
       expect(Object.keys(openai.models).length).toBe(6);
     });
+
+    test("claude", () => {
+      const claude = providers["claude"];
+      expect(claude).not.toBeUndefined();
+      expect(claude.name).toBe("Claude");
+      expect(Object.keys(claude.models).length).toBe(0);
+    });
   });
 
   describe("model", () => {
