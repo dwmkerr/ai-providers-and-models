@@ -1,5 +1,7 @@
 # ai-providers-and-models
 
+[![codecov](https://codecov.io/gh/dwmkerr/ai-providers-and-models/graph/badge.svg?token=1bEZ11ZqQZ)](https://codecov.io/gh/dwmkerr/ai-providers-and-models)
+
 Regularly updated list of AI providers and models, available for multiple languages and platforms, including:
 
 - OpenAI
@@ -7,6 +9,7 @@ Regularly updated list of AI providers and models, available for multiple langua
 
 > [!CAUTION]
 > This project is in the early stages, the API will most likely change. Please contribute or share if you can!
+
 
 <!-- vim-markdown-toc GFM -->
 
