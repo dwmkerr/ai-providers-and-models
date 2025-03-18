@@ -15,9 +15,16 @@ describe("models", () => {
       expect(claude.name).toBe("Claude");
       expect(Object.keys(claude.models).length).toBe(0);
     });
+
+    test("exposes gemini provider's models", () => {
+      const provider = providers["gemini"];
+      expect(provider).not.toBeUndefined();
+      expect(provider.name).toBe("Gemini");
+      expect(Object.keys(provider.models).length).toBe(3);
+    });
   });
 
-  describe("model", () => {
+  describe("openai-models", () => {
     describe("gpt-4o-2024-08-06", () => {
       test("is configured", () => {
         const model = providers["openai"].models["gpt-4o-2024-08-06"];
@@ -67,6 +74,42 @@ describe("models", () => {
         const model = providers["openai"].models["gpt-4-0613"];
         expect(model).not.toBeUndefined();
         expect(model.id).toBe("gpt-4-0613");
+      });
+    });
+  });
+
+  describe("gemini-models", () => {
+    describe("models/gemini-2.0-flash", () => {
+      test("is configured", () => {
+        const model = providers["gemini"].models["models/gemini-2.0-flash"];
+        expect(model).not.toBeUndefined();
+        expect(model.id).toBe("models/gemini-2.0-flash");
+        expect(model.name).toBe("Gemini 2.0 Flash");
+        expect(model.description_short).toBe(
+          "Our newest multimodal model, with next generation features and improved capabilities",
+        );
+      });
+    });
+    describe("models/gemini-2.0-flash-lite", () => {
+      test("is configured", () => {
+        const model =
+          providers["gemini"].models["models/gemini-2.0-flash-lite"];
+        expect(model).not.toBeUndefined();
+        expect(model.id).toBe("models/gemini-2.0-flash-lite");
+        expect(model.name).toBe("Gemini 2.0 Flash-Lite");
+        expect(model.description_short).toBe(
+          "A Gemini 2.0 Flash model optimized for cost efficiency and low latency",
+        );
+      });
+    });
+    describe("models/gemini-1.5-flash", () => {
+      test("is configured", () => {
+        const model = providers["gemini"].models["models/gemini-1.5-flash"];
+        expect(model.id).toBe("models/gemini-1.5-flash");
+        expect(model.name).toBe("Gemini 1.5 Flash");
+        expect(model.description_short).toBe(
+          "Our most balanced multimodal model with great performance for most tasks",
+        );
       });
     });
   });
