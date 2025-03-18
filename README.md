@@ -133,12 +133,6 @@ providers:
     api_specification: generativelanguage.googleapis.com/v1beta
     base_url: https://generativelanguage.googleapis.com/v1beta/
     additional_endpoints:
-      # Gemini has OpenAI compatible endpoints.
-      # https://ai.google.dev/gemini-api/docs/openai
-      api_specification: api.openai.com/v1
-      base_url: https://generativelanguage.googleapis.com/v1beta/openai/
-```
-
-NodeJS Example:
-
+      - api_specification: api.openai.com/v1 # Gemini has an OpenAI compatible endpoint...
+        base_url: https://generativelanguage.googleapis.com/v1beta/openai/
 
