@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { providers } from "./models";
+import { providers, models } from ".";
 
 //  Loop through each provider.
 for (const providerId of Object.keys(providers)) {
@@ -17,3 +17,5 @@ for (const providerId of Object.keys(providers)) {
     );
   }
 }
+
+console.log(models);

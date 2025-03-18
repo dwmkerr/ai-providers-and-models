@@ -1,0 +1,7 @@
+pytest
+coverage
+codecov
+flake8
+black
+build
+twine # securely send packages to pypi / test.pypi
