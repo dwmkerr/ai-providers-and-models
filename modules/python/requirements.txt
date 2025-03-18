@@ -1,0 +1,4 @@
+- r requirements.txt
+PyYAML>=6.0
+pydantic>=1.8
+

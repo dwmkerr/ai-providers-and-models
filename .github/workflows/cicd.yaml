@@ -58,8 +58,7 @@ jobs:
 
       - name: Build Distributable
         run: |
-          npm install
-          npm run build
+          make build
 
       - name: Publish to NPM
         run: |
@@ -72,6 +71,12 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Publish the module to GitHub packages.
+      - name: Publish to GitHub Packages
+        run: |
+          npm set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+          npm publish --registry https://npm.pkg.github.com
 
   attach-assets:
     needs: release

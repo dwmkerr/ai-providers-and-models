@@ -1,0 +1,64 @@
+from ai_providers_and_models.models import load_providers_yaml
+
+TEST_YAML = """
+version: "0.1.7"
+updated: "2025-03-18"
+source: "https://github.com/dwmkerr/ai-providers-and-models"
+author: "dwmkerr"
+providers:
+  openai:
+    id: "openai"
+    name: "OpenAI"
+    docs: "https://platform.openai.com/docs/models"
+    api_specification: "api.openai.com/v1"
+    base_url: "https://api.openai.com/v1/"
+    models:
+      test-model:
+        id: "test-model"
+        name: "Test Model"
+        documentation_url: "https://example.com/docs"
+        description_short: "A test model"
+        description: "This is a test model for demonstration purposes."
+        status: "preview"
+        knowledge_cutoff: "2024-01-01"
+        context_window: 1024
+        max_output_tokens: 512
+        validated: true
+        pricing:
+          input_per_million: 1.0
+          output_per_million: 2.0
+        modalities:
+          text: true
+          image: false
+          audio: false
+          video: false
+        endpoints:
+          assistants: true
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+"""
+
+
+def test_load_providers_yaml(tmp_path):
+    # Write the test YAML to a temporary file
+    d = tmp_path / "data"
+    d.write_text(TEST_YAML)
+    providers = load_providers_yaml(str(tmp_path / "data"))
+    assert providers.version == "0.1.7"
+    assert "openai" in providers.providers
+    openai_provider = providers.providers["openai"]
+    assert openai_provider.name == "OpenAI"
+    # Check one of the models
+    test_model = openai_provider.models["test-model"]
+    assert test_model.name == "Test Model"
+    assert test_model.pricing.input_per_million == 1.0

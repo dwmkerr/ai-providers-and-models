@@ -1,0 +1,30 @@
+[project]
+name = "ai_providers_and_models"
+version = "0.1.7"
+description = "AI providers and models data module for Python"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    # Consider using pip-tools / pip-compile
+    "PyYAML>=6.0",
+    "pydantic>=1.8"
+]
+
+# Use setuptools for building.
+# Setuptools must also package the models yaml file.
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools]
+include-package-data = true
+[tool.setuptools.packages.find]
+include = ["ai_providers_and_models"] # only our main module, not tests etc.
+[tool.setuptools.package-data]
+"ai_providers_and_models" = ["data/models.yaml"]
+
+# Let pytest know that our python module directory is a source for modules
+# that can be tested.
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]

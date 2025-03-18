@@ -1,0 +1,27 @@
+default: help
+
+.PHONY: help
+help: # Show help for each of the Makefile recipes.
+	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
+
+.PHONY: init # install dependencies
+init:
+	cp ../../models.yaml ./data/models.yaml
+	npm install
+
+.PHONY: lint
+lint:  # lint the code
+	npm run lint
+
+.PHONY: lint-fix
+lint-fix: # lint and fix the code
+	npm run lint:fix
+
+.PHONY: test # run tests and report coverage
+test:
+	npm run test:cov
+
+.PHONY: build # create a build ready for distribution
+build:
+	npm install
+	npm run build
