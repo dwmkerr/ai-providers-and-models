@@ -26,6 +26,14 @@ properties:
           format: uri
         api_specification:
           type: string
+
+
+
+    # additional_endpoints:
+    #   # Gemini has OpenAI compatible endpoints.
+    #   # https://ai.google.dev/gemini-api/docs/openai
+    #   api_specification: api.openai.com/v1
+    #   base_url: https://generativelanguage.googleapis.com/v1beta/openai/
         models:
           type: object
           additionalProperties:
@@ -65,13 +73,17 @@ properties:
                     type: boolean
                   audio:
                     type: boolean
-                required: [text, image, audio]
+                  video:
+                    type: boolean
+                required: [text, image, audio, video]
               endpoints:
                 type: object
                 properties:
                   assistants:
                     type: boolean
                   batch:
+                    type: boolean
+                  chat_completions:
                     type: boolean
                   completions_legacy:
                     type: boolean
@@ -96,6 +108,7 @@ properties:
                 required:
                   - assistants
                   - batch
+                  - chat_completions
                   - completions_legacy
                   - embeddings
                   - fine_tuning
