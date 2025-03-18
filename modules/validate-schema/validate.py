@@ -10,6 +10,7 @@ from ruamel.yaml import YAML
 import jsonschema
 from jsonschema.exceptions import ValidationError
 
+
 def load_yaml(file):
     """Load a YAML file, ensuring dates remain as strings."""
     yaml = YAML(typ='safe')
@@ -23,14 +24,16 @@ def load_yaml(file):
         print(f"❌ Error parsing '{file}':\n{exc}")
         sys.exit(1)
 
+
 def count_fields(models_list):
     """Count all individual fields in each model."""
     return sum(len(model.keys()) for model in models_list)
 
-def validate(yaml_data, schema, yaml_file, schema_file):
+
+def validate(yaml_data, schema):
     """Validate YAML data against a JSON schema and print a summary."""
     try:
-        jsonschema.validate(instance=yaml_data, schema=schema)
+        jsonschema.validate(instance=yaml_data, schema=schema, cls=jsonschema.Draft202012Validator)
         providers_dict = yaml_data.get("providers", {})
         total_providers = len(providers_dict)
         total_models = sum(
@@ -54,6 +57,7 @@ def validate(yaml_data, schema, yaml_file, schema_file):
         print(f"   Schema rule location: {schema_path}")
         sys.exit(1)
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print(f"Usage: {sys.argv[0]} <yaml-file> <schema-file>")
@@ -62,4 +66,4 @@ if __name__ == "__main__":
     yaml_file, schema_file = sys.argv[1], sys.argv[2]
     yaml_data = load_yaml(yaml_file)
     schema = load_yaml(schema_file)
-    validate(yaml_data, schema, yaml_file, schema_file)
+    validate(yaml_data, schema)
