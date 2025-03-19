@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.8](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.7...v0.1.8) (2025-03-19)
+
+
+### Features
+
+* added gemini models ([#23](https://github.com/dwmkerr/ai-providers-and-models/issues/23)) ([0faa740](https://github.com/dwmkerr/ai-providers-and-models/commit/0faa7401578a4aff6d1539b806b1ca3110483fa1))
+* gemini ([#25](https://github.com/dwmkerr/ai-providers-and-models/issues/25)) ([7959bb3](https://github.com/dwmkerr/ai-providers-and-models/commit/7959bb3a018bff4646daba9035da94832c537f18))
+* python module ([#26](https://github.com/dwmkerr/ai-providers-and-models/issues/26)) ([52d30d0](https://github.com/dwmkerr/ai-providers-and-models/commit/52d30d0bd014e3f5fdb11f52fdc099881dd5c6db))
+
+
+### Miscellaneous Chores
+
+* release 0.1.8 ([14baabf](https://github.com/dwmkerr/ai-providers-and-models/commit/14baabf766108071bcf9e5c4872830b2fca77cba))
+* release 0.1.8 ([788836b](https://github.com/dwmkerr/ai-providers-and-models/commit/788836b94a5900c12c0edfab77b131f179f8ac94))
+
 ## [0.1.7](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.6...v0.1.7) (2025-03-13)
 
 
