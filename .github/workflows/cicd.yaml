@@ -85,7 +85,7 @@ jobs:
   release-python:
     name: Release Python
     needs: release
-    # if: ${{ needs.release.outputs.released }}
+    if: ${{ needs.release.outputs.released }}
     runs-on: ubuntu-24.04
     defaults:
       run:
