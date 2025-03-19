@@ -33,7 +33,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies
-        run: npm install
+        run: make init
 
       - name: Lint
         run: make lint
@@ -72,3 +72,4 @@ jobs:
         with:
           directory: ./artifacts/coverage
           token: ${{ secrets.CODECOV_TOKEN }}
+          flags: node

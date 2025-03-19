@@ -7,6 +7,7 @@ help: # Show help for each of the Makefile recipes.
 .PHONY: init
 init: # install dependencies
 	cp ../../models.yaml ./src/ai_providers_and_models/data
+	python -m pip install --upgrade pip
 	pip install -r requirements-dev.txt
 	pip install -e .
 
