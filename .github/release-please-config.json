@@ -14,6 +14,11 @@
           "type": "json",
           "path": "modules/node/package.json",
           "jsonpath": "$.version"
+        },
+        {
+          "type": "toml",
+          "path": "modules/python/pyproject.toml",
+          "jsonpath": "project.version"
         }
       ],
      "changelog-path": "CHANGELOG.md"

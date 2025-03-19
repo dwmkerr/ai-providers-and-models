@@ -1,28 +1,39 @@
 # ai-providers-and-models
 
 [![codecov](https://codecov.io/gh/dwmkerr/ai-providers-and-models/graph/badge.svg?token=1bEZ11ZqQZ)](https://codecov.io/gh/dwmkerr/ai-providers-and-models)
+[![NPM Version](https://img.shields.io/npm/v/%40dwmkerr%2Fai-providers-and-models)](https://www.npmjs.com/package/@dwmkerr/ai-providers-and-models)
+[![PyPI version](https://badge.fury.io/py/ai-providers-and-models.svg)](https://pypi.org/project/ai-providers-and-models/)
 
-Regularly updated list of AI providers and models, available for multiple languages and platforms, including:
+Regularly updated list of AI providers and models, available for multiple languages and platforms, such as [OpenAI](#status) and [Gemini](#status).
 
-- OpenAI
-- Gemini
+APIs available for:
 
-> [!CAUTION]
+| Language                             | Package                            |
+|--------------------------------------|------------------------------------|
+| [Python](./modules/python/README.md) | `ai_providers_and_models`          |
+| [Node.JS](./modules/node/README.md)  | `@dwmkerr/ai-providers-and-models` |
+
+> [!INFO]
 > This project is in the early stages, the API will most likely change. Please contribute or share if you can!
 
+---
 
 <!-- vim-markdown-toc GFM -->
 
 - [Usage](#usage)
-- [NodeJS](#nodejs)
+- [APIs](#apis)
+    - [NodeJS](#nodejs)
+    - [Python](#python)
 - [Status](#status)
 - [Tips](#tips)
 
 <!-- vim-markdown-toc -->
 
+---
+
 ## Usage
 
-The [`models.yaml`](./models.yaml) file contains details of available OpenAI models and their capabilities.
+The [`models.yaml`](./models.yaml) file contains details of available OpenAI models and their capabilities, you can [download it and use it directly](https://raw.githubusercontent.com/dwmkerr/ai-providers-and-models/refs/heads/main/models.yaml). There are also [Node.JS](#nodejs) and [Python](#python) APIs.
 
 A short snippet is below - the `models.yaml` file is more complete.
 
@@ -63,7 +74,11 @@ providers:
           # ...etc...
 ```
 
-## NodeJS
+## APIs
+
+Model and provider data can be loaded programmatically for Node.JS and Python.
+
+### NodeJS
 
 Installation:
 
@@ -76,19 +91,50 @@ Usage:
 ```javascript
 import { providers } from "@dwmkerr/ai-providers-and-models";
 
-//  Retrieve a specific model by provider and model id.
-const model = providers["openai"].models["gpt-4.5-preview"];
-console.log(model);
-
-//  Loop through all providers and models.
+//  Loop through each provider and its models...
 for (const providerId of Object.keys(providers)) {
   const provider = providers[providerId];
   for (const modelId of Object.keys(provider.models)) {
     const model = provider.models[modelId];
-    console.log(provider.name + " " + model.name);
+    console.log(model.name);
   }
 }
+
+// ...or get more complex info!
+const model = providers["openai"].models["gpt-4.5-preview"];
+print(model.pricing.input_per_million)
 ```
+
+Detailed documentation at: [modules/node/README.md](./modules/node/README.md)
+
+### Python
+
+Installation:
+
+```bash
+pip install ai_providers_and_models
+```
+
+Usage:
+
+```python
+from ai_providers_and_models import providers
+
+# Loop through each provider and its models...
+for provider in providers.values():
+    print(provider.name)
+    for model_id, model in provider.models.items():
+        indent = "  "
+        # Print the model name in green bold followed by a grey description.
+        print(f"  {model.id} - {model.name}")
+
+# ...or get more complex info!
+model = providers["gemini"].models["models/gemini-2.0-flash"]
+print(model.pricing.input_per_million)
+print(model.modalities)
+```
+
+Detailed documentation at: [modules/python/README.md](./modules/python/README.md)
 
 ## Status
 
@@ -135,4 +181,4 @@ providers:
     additional_endpoints:
       - api_specification: api.openai.com/v1 # Gemini has an OpenAI compatible endpoint...
         base_url: https://generativelanguage.googleapis.com/v1beta/openai/
-
+```
