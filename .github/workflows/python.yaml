@@ -46,7 +46,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: ./artifacts/
+          # Note that GH doesn't respect 'working-directory' here...
+          path: ./modules/python/artifacts/
 
   upload-coverage:
     name: Upload Coverage
