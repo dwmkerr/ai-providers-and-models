@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 
 env:
-  NODE_LTS_VERSION: 22.x
+  NODE_LTS_VERSION: "22.x"
 
 jobs:
   validate:

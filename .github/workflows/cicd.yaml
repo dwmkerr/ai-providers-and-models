@@ -11,8 +11,8 @@ permissions:
   pull-requests: write
 
 env:
-  PYTHON_VERSION: 3.10
-  NODE_LTS_VERSION: 22.x
+  PYTHON_VERSION: "3.10"
+  NODE_LTS_VERSION: "22.x"
 
 jobs:
   validate:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: "${{ env.PYTHON_VERSION }}"
           cache: 'pip'
       - name: Lint YAML
         run: |
@@ -97,7 +97,7 @@ jobs:
       - name: Setup Python for Release
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: "${{ env.PYTHON_VERSION }}"
           cache: 'pip'
 
       - name: Install

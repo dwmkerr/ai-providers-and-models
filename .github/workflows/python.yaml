@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 env:
-  PYTHON_VERSION: 3.10
+  PYTHON_VERSION: "3.10"
 
 jobs:
   validate:
@@ -28,7 +28,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: "${{ env.PYTHON_VERSION }}"
 
       - name: Install Dependencies
         run: make init
