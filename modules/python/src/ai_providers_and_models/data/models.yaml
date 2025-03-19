@@ -1,0 +1,368 @@
+version: 0.1.7
+updated: 2025-03-18
+source: https://github.com/dwmkerr/ai-providers-and-models
+author: dwmkerr
+providers:
+  openai:
+    id: openai
+    name: OpenAI
+    docs: https://platform.openai.com/docs/models
+    api_specification: api.openai.com/v1
+    base_url: https://api.openai.com/v1/
+    models:
+      gpt-4o-2024-08-06:
+        id: gpt-4o-2024-08-06
+        name: GPT-4o
+        documentation_url: https://platform.openai.com/docs/models/gpt-4o
+        description_short: Fast, intelligent, flexible GPT model
+        description: >-
+          GPT-4o (“o” for “omni”) is our versatile, high-intelligence flagship
+          model. It accepts both text and image inputs, and produces text
+          outputs (including Structured Outputs). It is the best model for most
+          tasks, and is our most capable model outside of our o-series models.
+        status: general-availability
+        knowledge_cutoff: September 30, 2023
+        context_window: 128000
+        max_output_tokens: 16384
+        validated: true
+        pricing:
+          input_per_million: 2.5
+          output_per_million: 10
+        modalities:
+          text: true
+          image: false
+          audio: false
+          video: false
+        endpoints:
+          assistants: true
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      gpt-4.5-preview:
+        id: gpt-4.5-preview
+        name: GPT-4.5
+        documentation_url: https://platform.openai.com/docs/models/gpt-4.5-preview
+        description_short: >-
+          Enhanced GPT model with improved reasoning and conversational
+          abilities
+        description: >-
+          GPT-4.5 is the latest iteration in the GPT series, offering
+          significant improvements in reasoning, factual accuracy, and
+          multi-turn conversational capabilities over previous models. Building
+          on the advancements of GPT-4, it delivers faster performance and
+          refined outputs. Currently in preview, it provides a glimpse into the
+          future of AI-driven interactions.
+        status: preview
+        knowledge_cutoff: April 2024
+        context_window: 128000
+        max_output_tokens: 16384
+        validated: false
+        pricing:
+          input_per_million: 75
+          output_per_million: 150
+        modalities:
+          text: true
+          image: false
+          audio: false
+          video: false
+        endpoints:
+          assistants: true
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      o3-mini-2025-01-31:
+        id: o3-mini-2025-01-31
+        name: o3-mini
+        documentation_url: https://platform.openai.com/docs/models/o3-mini
+        description_short: Fast, flexible, intelligent reasoning model
+        description: >-
+          o3-mini is our newest small reasoning model, providing high
+          intelligence at the same cost and latency targets of o1-mini. o3-mini
+          supports key developer features, like Structured Outputs, function
+          calling, and Batch API.
+        status: preview
+        validated: true
+        knowledge_cutoff: October 2023
+        context_window: 200000
+        max_output_tokens: 100000
+        pricing:
+          input_per_million: 1.1
+          output_per_million: 4.4
+        modalities:
+          text: true
+          image: false
+          audio: false
+          video: false
+        endpoints:
+          assistants: true
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      o1-2024-12-17:
+        id: o1-2024-12-17
+        name: o1
+        documentation_url: https://platform.openai.com/docs/models/o1
+        description_short: High-intelligence reasoning model
+        description: >-
+          The o1 series of models are trained with reinforcement learning to
+          perform complex reasoning. o1 models think before they answer,
+          producing a long internal chain of thought before responding to the
+          user.
+        status: general-availability
+        knowledge_cutoff: September 30, 2023
+        context_window: 200000
+        max_output_tokens: 100000
+        validated: true
+        pricing:
+          input_per_million: 15
+          output_per_million: 60
+        modalities:
+          text: true
+          image: true
+          audio: false
+          video: false
+        endpoints:
+          assistants: true
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      gpt-4o-mini-2024-07-18:
+        id: gpt-4o-mini-2024-07-18
+        name: GPT-4o mini
+        documentation_url: https://platform.openai.com/docs/models/gpt-4o-mini
+        description_short: Fast, affordable small model for focused tasks
+        description: >-
+          GPT-4o mini (“o” for “omni”) is a fast, affordable small model for
+          focused tasks. It accepts both text and image inputs, and produces
+          text outputs (including Structured Outputs). It is ideal for
+          fine-tuning, and model outputs from a larger model like GPT-4o can be
+          distilled to GPT-4o-mini to produce similar results at lower cost and
+          latency.
+        status: preview
+        knowledge_cutoff: Oct 01, 2023
+        context_window: 128000
+        max_output_tokens: 16384
+        validated: false
+        pricing:
+          input_per_million: 0.15
+          output_per_million: 0.6
+        modalities:
+          text: true
+          image: true
+          audio: false
+          video: false
+        endpoints:
+          assistants: true
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      gpt-4-0613:
+        id: gpt-4-0613
+        name: GPT-4
+        documentation_url: https://platform.openai.com/docs/models/gpt-4
+        description_short: An older high-intelligence GPT model
+        description: >-
+          GPT-4 is an older version of a high-intelligence GPT model, usable in
+          Chat Completions.
+        status: general-availability
+        knowledge_cutoff: Dec 01, 2023
+        context_window: 8192
+        max_output_tokens: 8192
+        validated: true
+        pricing:
+          input_per_million: 30
+          output_per_million: 60
+        modalities:
+          text: true
+          image: false
+          audio: false
+          video: false
+        endpoints:
+          assistants: true
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+
+  # Providers: Gemini
+  gemini:
+    id: gemini
+    name: Gemini
+    docs: https://ai.google.dev/gemini-api/docs/models
+    api_specification: generativelanguage.googleapis.com/v1beta
+    base_url: https://generativelanguage.googleapis.com/v1beta/
+    additional_endpoints:
+      # Gemini has OpenAI compatible endpoints.
+      # https://ai.google.dev/gemini-api/docs/openai
+      - api_specification: api.openai.com/v1
+        base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    models:
+      models/gemini-2.0-flash:
+        id: "models/gemini-2.0-flash"
+        name: "Gemini 2.0 Flash"
+        documentation_url: "https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash"
+        description_short: "Our newest multimodal model, with next generation features and improved capabilities"
+        description: "Gemini 2.0 Flash delivers next-gen features and improved capabilities, including superior speed, native tool use, multimodal generation, and a 1M token context window."
+        warnings: "'endpoints' are not mapped correctly, see #19; always check pricing; input modalities text only"
+        status: "general-availability"
+        knowledge_cutoff: "August 2024"
+        context_window: 1048576
+        max_output_tokens: 8192
+        validated: false
+        # https://ai.google.dev/gemini-api/docs/pricing
+        pricing:
+          input_per_million: 0.10
+          output_per_million: 0.40 
+        modalities: 
+          text: true
+          image: true
+          audio: true
+          video: true
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+
+      models/gemini-2.0-flash-lite:
+        id: "models/gemini-2.0-flash-lite"
+        name: "Gemini 2.0 Flash-Lite"
+        documentation_url: "https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash-lite"
+        description_short: "A Gemini 2.0 Flash model optimized for cost efficiency and low latency"
+        description: "A Gemini 2.0 Flash model optimized for cost efficiency and low latency."
+        status: "general-availability"
+        knowledge_cutoff: "August 2024"
+        context_window: 1048576
+        max_output_tokens: 8192
+        validated: false
+        warnings: "'endpoints' are not mapped correctly, see #19; always check pricing; input modalities text only"
+        # https://ai.google.dev/gemini-api/docs/pricing
+        pricing:
+          input_per_million: 0.075
+          output_per_million: 0.30 
+        modalities: 
+          text: true
+          image: true
+          audio: true
+          video: true
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+
+      models/gemini-1.5-flash:
+        id: "models/gemini-1.5-flash"
+        name: "Gemini 1.5 Flash"
+        documentation_url: "https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-flash"
+        description_short: "Our most balanced multimodal model with great performance for most tasks"
+        description: "Gemini 1.5 Flash is a fast and versatile multimodal model for scaling across diverse tasks."
+        warnings: "'endpoints' are not mapped correctly, see #19; always check pricing; input modalities text only"
+        status: "general-availability"
+        knowledge_cutoff: "September 2024"
+        context_window: 1048576
+        max_output_tokens: 8192
+        validated: false
+        # https://ai.google.dev/gemini-api/docs/pricing
+        pricing:
+          input_per_million: 0.075
+          output_per_million: 0.30 
+        modalities: 
+          text: true
+          image: true
+          audio: true
+          video: true
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+
+  # Providers: Claude
+  claude:
+    id: claude
+    name: Claude
+    docs: https://docs.anthropic.com/en/docs/about-claude/models/all-models
+    api_specification: api.anthropic.com/v1
+    base_url: https://api.anthropic.com/v1/
+    models: {}

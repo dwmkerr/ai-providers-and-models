@@ -1,4 +1,4 @@
-name: "CI/CD: Node Module"
+name: "CI/CD: Python Module"
 
 on:
   push:
@@ -7,38 +7,36 @@ on:
   pull_request:
   workflow_dispatch:
 
-# Release Please needs permissions to write commits and open PRs.
 permissions:
   contents: write
   pull-requests: write
 
 env:
-  NODE_LTS_VERSION: "22.x"
+  PYTHON_VERSION: "3.10"
 
 jobs:
   validate:
     name: Validate
     defaults:
       run:
-        working-directory: ./modules/node
+        working-directory: ./modules/python
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: ${{ env.NODE_LTS_VERSION }}
-          registry-url: 'https://registry.npmjs.org'
+          python-version: "${{ env.PYTHON_VERSION }}"
 
       - name: Install Dependencies
         run: make init
 
-      - name: Lint
+      - name: Lint Code
         run: make lint
 
-      - name: Build
+      - name: Build Package
         run: make build
 
       - name: Test with Coverage
@@ -49,7 +47,7 @@ jobs:
         with:
           name: build-artifacts
           # Note that GH doesn't respect 'working-directory' here...
-          path: ./modules/node/artifacts/
+          path: ./modules/python/artifacts/
 
   upload-coverage:
     name: Upload Coverage
@@ -57,9 +55,9 @@ jobs:
     runs-on: ubuntu-24.04
     defaults:
       run:
-        working-directory: ./modules/node
+        working-directory: ./modules/python
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Download Build Artifacts
@@ -68,9 +66,10 @@ jobs:
           name: build-artifacts
           path: ./artifacts
 
-      - name: Upload Coverage
+      # # Upload the first coverage report
+      - name: Upload Coverage Report
         uses: codecov/codecov-action@v5
         with:
           directory: ./artifacts/coverage
           token: ${{ secrets.CODECOV_TOKEN }}
-          flags: node
+          flags: python

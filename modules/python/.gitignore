@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+env/
+venv/
+ENV/
+.env
+.venv
+
+# Distribution / build / coverage artifacts.
+build/
+dist/
+*.egg-info/
+artifacts/
+.coverage
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
