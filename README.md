@@ -13,7 +13,7 @@ APIs available for:
 | [Python](./modules/python/README.md) | `ai_providers_and_models`          |
 | [Node.JS](./modules/node/README.md)  | `@dwmkerr/ai-providers-and-models` |
 
-> [!INFO]
+> [!NOTE]
 > This project is in the early stages, the API will most likely change. Please contribute or share if you can!
 
 ---
@@ -154,9 +154,9 @@ The following models have been validated:
 | [ChatGPT 4o mini](https://platform.openai.com/docs/models/gpt-4o-mini)                      | `gpt-4o-mini-2024-07-18` (default)                              | ✅ 🧠                   |
 | [ChatGPT 4](https://platform.openai.com/docs/models/gpt-4)                                  | `gpt-4-0613` (default)                                          | ❌                      |
 | **Gemini**                                                                                  |                                                                 |                         |
-| [Gemini 2.0 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash)           | `models/gemini-2.0-flash` (default)                             | ⚠️  (Testing in Process) |
-| [Gemini 2.0 Flash Lite](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-lite) | `models/gemini-2.0-flash-lite` (default)                        | ⚠️  (Testing in Process) |
-| [Gemini 1.5 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-1.5-flash)           | `models/gemini-1.5-flash` (default)                             | ⚠️  (Testing in Process) | 
+| [Gemini 2.0 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash)           | `models/gemini-2.0-flash` (default)                             | ✅ 🧠                   |
+| [Gemini 2.0 Flash Lite](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-lite) | `models/gemini-2.0-flash-lite` (default)                        | ✅ 🧠                   |
+| [Gemini 1.5 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-1.5-flash)           | `models/gemini-1.5-flash` (default)                             | ✅ 🧠                   |
 
 Notes:
 
