@@ -13,7 +13,7 @@ def main():
         # Print the provider's name in blue bold
         print(f"\033[94m\033[1m{provider.name}\033[0m")
         # Loop through all models for this provider.
-        for model_id, model in provider.models.items():
+        for model in provider.models.values():
             indent = "  "
             # Print the model name in green bold then a grey description.
             print(

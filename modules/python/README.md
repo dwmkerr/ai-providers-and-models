@@ -4,7 +4,7 @@ The Python API for [`ai-providers-and-models`](https://github.com/dwmkerr/ai-pro
 
 ## Setup
 
-Install dev dependencies and copy the latest `models.yaml` into the development environment:
+Install dev dependencies and link the `models.yaml` into the development environment:
 
 ```bash
 make init
@@ -20,9 +20,7 @@ Deploy to [TestPyPi](https://test.pypi.org) first then test the examples:
 # version = "0.1.0rc1"
 make build
 twine upload --repository testpypi dist/*
-```
 
-```bash
 # Create and activate a new venv.
 python3 -m venv test_apam
 source test_apam/bin/activate
@@ -37,7 +35,7 @@ pip index versions --pre --index-url https://test.pypi.org/simple/ ai_providers_
 
 # Run the examples.
 for example in ./examples/*; do
-    [[ -e "${example}" ]] && python "${example}"
+    [[ -e "${example}" ]] && python3 "${example}"
 done
 
 # Deactivate and delete the venv
