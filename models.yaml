@@ -1,5 +1,5 @@
-version: 0.1.7
-updated: 2025-03-18
+version: 0.1.8
+updated: 2025-03-18T00:00:00.000Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
 providers:
@@ -236,8 +236,6 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-  # Providers: Gemini
   gemini:
     id: gemini
     name: Gemini
@@ -245,28 +243,32 @@ providers:
     api_specification: generativelanguage.googleapis.com/v1beta
     base_url: https://generativelanguage.googleapis.com/v1beta/
     additional_endpoints:
-      # Gemini has OpenAI compatible endpoints.
-      # https://ai.google.dev/gemini-api/docs/openai
       - api_specification: api.openai.com/v1
         base_url: https://generativelanguage.googleapis.com/v1beta/openai/
     models:
       models/gemini-2.0-flash:
-        id: "models/gemini-2.0-flash"
-        name: "Gemini 2.0 Flash"
-        documentation_url: "https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash"
-        description_short: "Our newest multimodal model, with next generation features and improved capabilities"
-        description: "Gemini 2.0 Flash delivers next-gen features and improved capabilities, including superior speed, native tool use, multimodal generation, and a 1M token context window."
-        warnings: "'endpoints' are not mapped correctly, see #19; always check pricing; input modalities text only"
-        status: "general-availability"
-        knowledge_cutoff: "August 2024"
+        id: models/gemini-2.0-flash
+        name: Gemini 2.0 Flash
+        documentation_url: https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash
+        description_short: >-
+          Our newest multimodal model, with next generation features and
+          improved capabilities
+        description: >-
+          Gemini 2.0 Flash delivers next-gen features and improved capabilities,
+          including superior speed, native tool use, multimodal generation, and
+          a 1M token context window.
+        warnings: >-
+          'endpoints' are not mapped correctly, see #19; always check pricing;
+          input modalities text only
+        status: general-availability
+        knowledge_cutoff: August 2024
         context_window: 1048576
         max_output_tokens: 8192
         validated: false
-        # https://ai.google.dev/gemini-api/docs/pricing
         pricing:
-          input_per_million: 0.10
-          output_per_million: 0.40 
-        modalities: 
+          input_per_million: 0.1
+          output_per_million: 0.4
+        modalities:
           text: true
           image: true
           audio: true
@@ -285,24 +287,27 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
       models/gemini-2.0-flash-lite:
-        id: "models/gemini-2.0-flash-lite"
-        name: "Gemini 2.0 Flash-Lite"
-        documentation_url: "https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash-lite"
-        description_short: "A Gemini 2.0 Flash model optimized for cost efficiency and low latency"
-        description: "A Gemini 2.0 Flash model optimized for cost efficiency and low latency."
-        status: "general-availability"
-        knowledge_cutoff: "August 2024"
+        id: models/gemini-2.0-flash-lite
+        name: Gemini 2.0 Flash-Lite
+        documentation_url: >-
+          https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash-lite
+        description_short: A Gemini 2.0 Flash model optimized for cost efficiency and low latency
+        description: >-
+          A Gemini 2.0 Flash model optimized for cost efficiency and low
+          latency.
+        status: general-availability
+        knowledge_cutoff: August 2024
         context_window: 1048576
         max_output_tokens: 8192
         validated: false
-        warnings: "'endpoints' are not mapped correctly, see #19; always check pricing; input modalities text only"
-        # https://ai.google.dev/gemini-api/docs/pricing
+        warnings: >-
+          'endpoints' are not mapped correctly, see #19; always check pricing;
+          input modalities text only
         pricing:
           input_per_million: 0.075
-          output_per_million: 0.30 
-        modalities: 
+          output_per_million: 0.3
+        modalities:
           text: true
           image: true
           audio: true
@@ -321,24 +326,28 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
       models/gemini-1.5-flash:
-        id: "models/gemini-1.5-flash"
-        name: "Gemini 1.5 Flash"
-        documentation_url: "https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-flash"
-        description_short: "Our most balanced multimodal model with great performance for most tasks"
-        description: "Gemini 1.5 Flash is a fast and versatile multimodal model for scaling across diverse tasks."
-        warnings: "'endpoints' are not mapped correctly, see #19; always check pricing; input modalities text only"
-        status: "general-availability"
-        knowledge_cutoff: "September 2024"
+        id: models/gemini-1.5-flash
+        name: Gemini 1.5 Flash
+        documentation_url: https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-flash
+        description_short: >-
+          Our most balanced multimodal model with great performance for most
+          tasks
+        description: >-
+          Gemini 1.5 Flash is a fast and versatile multimodal model for scaling
+          across diverse tasks.
+        warnings: >-
+          'endpoints' are not mapped correctly, see #19; always check pricing;
+          input modalities text only
+        status: general-availability
+        knowledge_cutoff: September 2024
         context_window: 1048576
         max_output_tokens: 8192
         validated: false
-        # https://ai.google.dev/gemini-api/docs/pricing
         pricing:
           input_per_million: 0.075
-          output_per_million: 0.30 
-        modalities: 
+          output_per_million: 0.3
+        modalities:
           text: true
           image: true
           audio: true
@@ -357,8 +366,6 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-  # Providers: Claude
   claude:
     id: claude
     name: Claude
