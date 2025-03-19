@@ -20,8 +20,8 @@ lint-fix: # lint and fix the code
 
 .PHONY: test # run tests and report coverage
 test:
-	pytest
 	coverage run -m pytest
+	coverage xml -o artifacts/coverage/coverage.xml
 	coverage report -m
 
 .PHONY: build # create a build ready for distribution
