@@ -18,7 +18,7 @@ Dependencies:
 Ensure that the YAML file (models.yaml) is included as package data.
 """
 from .models import load_providers_yaml
-
+ 
 # Load the providers.
 try:
     providers = load_providers_yaml().providers

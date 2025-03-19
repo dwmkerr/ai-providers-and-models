@@ -1,5 +1,4 @@
 from datetime import date
-import yaml
 from pydantic import BaseModel
 from typing import Dict, Optional
 
@@ -50,27 +49,9 @@ class Provider(BaseModel):
     models: Dict[str, Model]
 
 
-class AIProviders(BaseModel):
+class ProvidersFile(BaseModel):
     version: str
     updated: date
     source: str
     author: str
     providers: Dict[str, Provider]
-
-
-def load_providers_yaml() -> AIProviders:
-    # Try Python 3.9 files...
-    try:
-        from importlib.resources import files
-
-        data_path = (
-            files("ai_providers_and_models.data").joinpath("models.yaml")
-        )
-        data = data_path.read_text(encoding="utf-8")
-    # ...fall back to read_text.
-    except ImportError:
-        from importlib.resources import read_text
-
-        data = read_text("ai_providers_and_models.data", "models.yaml")
-    parsed = yaml.safe_load(data)
-    return AIProviders(**parsed)

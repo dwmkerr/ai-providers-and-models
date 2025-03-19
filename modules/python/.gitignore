@@ -10,10 +10,11 @@ ENV/
 .env
 .venv
 
-# Distribution / packaging
+# Distribution / build / coverage artifacts.
 build/
 dist/
 *.egg-info/
+.coverage
 
 # Installer logs
 pip-log.txt

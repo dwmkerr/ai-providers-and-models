@@ -1,4 +1,4 @@
-from ai_providers_and_models.models import load_providers_yaml
+from src.ai_providers_and_models.providers_file import load_providers_file
 
 TEST_YAML = """
 version: "0.1.7"
@@ -50,10 +50,7 @@ providers:
 
 
 def test_load_providers_yaml(tmp_path):
-    # Write the test YAML to a temporary file
-    d = tmp_path / "data"
-    d.write_text(TEST_YAML)
-    providers = load_providers_yaml(str(tmp_path / "data"))
+    providers = load_providers_file(TEST_YAML)
     assert providers.version == "0.1.7"
     assert "openai" in providers.providers
     openai_provider = providers.providers["openai"]
