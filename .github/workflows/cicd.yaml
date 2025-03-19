@@ -102,8 +102,6 @@ jobs:
 
       - name: Install
         run: make init
-          pip install --upgrade pip
-          pip install build twine
 
       - name: Build Python Distribution
         run: make build
