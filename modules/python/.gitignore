@@ -14,6 +14,7 @@ ENV/
 build/
 dist/
 *.egg-info/
+artifacts/
 .coverage
 
 # Installer logs
