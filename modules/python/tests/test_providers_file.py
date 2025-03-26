@@ -59,3 +59,6 @@ def test_load_providers_yaml(tmp_path):
     test_model = openai_provider.models["test-model"]
     assert test_model.name == "Test Model"
     assert test_model.pricing.input_per_million == 1.0
+
+    # Assert that we can load anchors (e.g. gemini_openai).
+    gemini_openai = providers.providers["gemini_openai"]
