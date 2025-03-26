@@ -371,7 +371,7 @@ providers:
   # Google Gemini with the OpenAI Compatible Base URL.
   gemini_openai:
     <<: *gemini
-    id: gemini_open
+    id: gemini_openai
     name: Gemini (OpenAI Compatible)
     docs: https://ai.google.dev/gemini-api/docs/openai
     api_specification: api.openai.com/v1
