@@ -35,6 +35,14 @@ describe("models", () => {
         },
       ]);
     });
+
+    test("allows for provider mappings such as 'gemini_openai'", () => {
+      //  Expect that 'gemini_openai' is mapped properly
+      const geminiOpenAI = providers["gemini_openai"];
+      expect(geminiOpenAI).not.toBeUndefined();
+      expect(geminiOpenAI.name).toBe("Gemini (OpenAI Compatible)");
+      expect(Object.keys(geminiOpenAI.models).length).toBe(3);
+    });
   });
 
   describe("openai-models", () => {

@@ -4,9 +4,9 @@ default: help
 help: # Show help for each of the Makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
-.PHONY: init # install dependencies
-init:
-	cp ../../models.yaml ./data/models.yaml
+.PHONY: init
+init: # install dependencies, get latest models.yaml
+	cp ../../models.yaml ./data
 	npm install
 
 .PHONY: lint

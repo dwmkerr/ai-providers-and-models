@@ -6,7 +6,7 @@ updated: "2025-03-18"
 source: "https://github.com/dwmkerr/ai-providers-and-models"
 author: "dwmkerr"
 providers:
-  openai:
+  openai: &openai
     id: "openai"
     name: "OpenAI"
     docs: "https://platform.openai.com/docs/models"
@@ -46,6 +46,12 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
+  # Google Gemini with the OpenAI Compatible Base URL.
+  gemini_openai:
+    <<: *openai
+    id: gemini_openai
+    name: Gemini (OpenAI Compatible)
+    docs: https://ai.google.dev/gemini-api/docs/openai
 """
 
 
@@ -59,3 +65,8 @@ def test_load_providers_yaml(tmp_path):
     test_model = openai_provider.models["test-model"]
     assert test_model.name == "Test Model"
     assert test_model.pricing.input_per_million == 1.0
+
+    # Assert that we can load anchors (e.g. gemini_openai).
+    gemini_openai = providers.providers["gemini_openai"]
+    assert gemini_openai.id == "gemini_openai"
+    assert gemini_openai.name == "Gemini (OpenAI Compatible)"

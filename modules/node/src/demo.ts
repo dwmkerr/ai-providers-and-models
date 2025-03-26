@@ -6,6 +6,8 @@ for (const providerId of Object.keys(providers)) {
   //  Show a summary of each provider.
   const provider = providers[providerId];
   console.log(chalk.blue.bold(provider.name));
+  console.log(chalk.white(`id: ${provider.id}`));
+  console.log(chalk.white(`models: ${provider.models}`));
 
   //  Loop through all of the models.
   for (const modelId of Object.keys(provider.models)) {
