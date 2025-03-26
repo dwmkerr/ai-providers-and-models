@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "updateyaml":"cp ../../models.yaml ./data",
+    "updateyaml": "cp ../../models.yaml ./data",
     "prebuild": "npm run updateyaml",
     "build": "npm run update-models && tsc",
     "build:watch": "npm run update-models && tsc -w",
