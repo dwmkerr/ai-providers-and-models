@@ -6,8 +6,12 @@
       "release-type": "simple",
       "extra-files": [
         {
+          "type": "generic",
+          "path": "models.yaml"
+        },
+        {
           "type": "yaml",
-          "path": "models.yaml",
+          "path": "modelsold.yaml",
           "jsonpath": "$.version"
         },
         {

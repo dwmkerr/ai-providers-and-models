@@ -5,23 +5,21 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "updateyaml": "cp ../../models.yaml ./data",
-    "prebuild": "npm run updateyaml",
+    "update-models":"cp ../../models.yaml ./data",
     "build": "npm run update-models && tsc",
     "build:watch": "npm run update-models && tsc -w",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky",
     "prepublishOnly": "npm run build && npm run lint && npm run test",
-    "start": "npm run updateyaml && ts-node src/demo.ts",
-    "start:debug": "npm run updateyaml && node --inspect-brk node_modules/.bin/ts-node ./src/demo.ts",
-    "pretest": "cp ../../models.yaml .",
+    "start": "npm run update-models && ts-node src/demo.ts",
+    "start:debug": "npm run update-models && node --inspect-brk node_modules/.bin/ts-node ./src/demo.ts",
+    "pretest": "npm run update-models",
     "test": "jest --coverage",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand --no-coverage",
     "test:watch": "jest --watch --no-coverage",
-    "tsc": "tsc",
-    "update-models": "cp ../../models.yaml ."
+    "tsc": "tsc"
   },
   "files": [
     "dist",
