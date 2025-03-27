@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.1.9](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.8...v0.1.9) (2025-03-27)
+
+
+### Features
+
+* **gemini_openai:** added 'gemini_openai' as a provider ([#28](https://github.com/dwmkerr/ai-providers-and-models/issues/28)) ([997a890](https://github.com/dwmkerr/ai-providers-and-models/commit/997a89008cda3746e93eb05691d85076867c09b4))
+
+
+### Bug Fixes
+
+* correct node models packaging ([#30](https://github.com/dwmkerr/ai-providers-and-models/issues/30)) ([e0ccd2f](https://github.com/dwmkerr/ai-providers-and-models/commit/e0ccd2fa26e02e1ed5f659bc42b2a0ed0be06bd0))
+
+
+### Miscellaneous Chores
+
+* release 0.1.8 ([67eff51](https://github.com/dwmkerr/ai-providers-and-models/commit/67eff51c842a2c0b81b1b2b485fca69a5f3fdb39))
+* release 0.1.8 ([6921067](https://github.com/dwmkerr/ai-providers-and-models/commit/6921067d0364b608bd618211db06c237373a3212))
+* release 0.1.9 ([871179c](https://github.com/dwmkerr/ai-providers-and-models/commit/871179cca2bc2b9c985502db868d7e55beacb046))
+
 ## [0.1.8](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.8...v0.1.8) (2025-03-26)
 
 

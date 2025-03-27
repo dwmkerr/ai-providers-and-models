@@ -1,11 +1,11 @@
 {
   "name": "@dwmkerr/ai-providers-and-models",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "AI providers and models data module for Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "update-models":"cp ../../models.yaml ./data",
+    "update-models": "cp ../../models.yaml ./data",
     "build": "npm run update-models && tsc",
     "build:watch": "npm run update-models && tsc -w",
     "lint": "eslint .",
