@@ -1,5 +1,7 @@
 # ai_providers_and_models
 
+[![codecov](https://codecov.io/gh/dwmkerr/ai-providers-and-models/graph/badge.svg?flag=python&token=1bEZ11ZqQZ)](https://codecov.io/gh/dwmkerr/ai-providers-and-models)
+
 The Python API for [`ai-providers-and-models`](https://github.com/dwmkerr/ai-providers-and-models).
 
 ## Setup
