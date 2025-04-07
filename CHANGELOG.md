@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.10](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.9...v0.1.10) (2025-04-07)
+
+
+### Bug Fixes
+
+* **openai:** correct 'image' modalities ([3a44b7d](https://github.com/dwmkerr/ai-providers-and-models/commit/3a44b7d296b7000571d8d702ac1075ba326595fa))
+
 ## [0.1.9](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.8...v0.1.9) (2025-03-27)
 
 
