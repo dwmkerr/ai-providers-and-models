@@ -20,8 +20,8 @@ import os
 import sys
 from typing import Dict, List, Tuple, Set
 
-# Add parent directory to path so we can import the package
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Add python directory to path so we can import the package
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../python')))
 from ai_providers_and_models import providers
 
 from openai import OpenAI
@@ -185,13 +185,9 @@ def main():
     print(f"models in yaml but not in api: {len(yaml_only_models)}")
     print(f"models in api but not in yaml: {len(api_only_models)}")
     
-    # Print API-only models on one line
+    # Don't print out the names of untested models, just the count
     if api_only_models:
-        sorted_api_models = sorted(list(api_only_models))
-        api_models_str = ", ".join(sorted_api_models[:10])
-        if len(sorted_api_models) > 10:
-            api_models_str += f"... and {len(sorted_api_models) - 10} more"
-        print(f"{YELLOW}note: api models not tested:{RESET} {api_models_str}")
+        print(f"{YELLOW}note: {len(api_only_models)} api models not tested{RESET}")
     
     # Count successful tests
     successful = sum(1 for result in test_results.values() if result)
