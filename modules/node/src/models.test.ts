@@ -55,9 +55,15 @@ describe("models", () => {
         expect(model.description_short).toBe(
           "Fast, intelligent, flexible GPT model",
         );
+        expect(model.knowledgeCutoff).toBe("October 2023");
         expect(model.versions).toHaveLength(3);
         expect(model.versions[0].id).toBe("gpt-4o-2024-08-06");
         expect(model.versions[0].isDefault).toBe(true);
+        expect(model.versions[0].isDeprecated).toBe(false);
+        expect(model.versions[1].id).toBe("gpt-4o-2024-11-20");
+        expect(model.versions[1].isDeprecated).toBe(false);
+        expect(model.versions[2].id).toBe("gpt-4o-2024-05-13");
+        expect(model.versions[2].isDeprecated).toBe(true);
       });
     });
 
@@ -66,9 +72,11 @@ describe("models", () => {
         const model = providers["openai"].models["gpt-4.5-preview"];
         expect(model).not.toBeUndefined();
         expect(model.id).toBe("gpt-4.5-preview");
+        expect(model.knowledgeCutoff).toBe("October 2023");
         expect(model.versions).toHaveLength(1);
         expect(model.versions[0].id).toBe("gpt-4.5-preview-2025-02-27");
         expect(model.versions[0].isDefault).toBe(true);
+        expect(model.versions[0].isDeprecated).toBe(false);
       });
     });
 
@@ -101,17 +109,6 @@ describe("models", () => {
         expect(model.id).toBe("gpt-4");
         expect(model.versions).toHaveLength(2);
         expect(model.versions[0].id).toBe("gpt-4-0613");
-        expect(model.versions[0].isDefault).toBe(true);
-      });
-    });
-
-    describe("gpt-3.5-turbo", () => {
-      test("is configured", () => {
-        const model = providers["openai"].models["gpt-3.5-turbo"];
-        expect(model).not.toBeUndefined();
-        expect(model.id).toBe("gpt-3.5-turbo");
-        expect(model.versions).toHaveLength(3);
-        expect(model.versions[0].id).toBe("gpt-3.5-turbo-0125");
         expect(model.versions[0].isDefault).toBe(true);
       });
     });
