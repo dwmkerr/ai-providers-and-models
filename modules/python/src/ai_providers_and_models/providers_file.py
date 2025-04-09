@@ -18,5 +18,10 @@ def load_providers_file(data: str) -> ProvidersFile:
     # Remove the resolver for dates
     SafeLoaderNoDateParsing.remove_implicit_resolver('tag:yaml.org,2002:timestamp')
     
-    parsed = yaml.load(data, SafeLoaderNoDateParsing)
-    return ProvidersFile(**parsed)
+    try:
+        parsed = yaml.load(data, SafeLoaderNoDateParsing)
+        return ProvidersFile(**parsed)
+    except yaml.YAMLError as e:
+        raise RuntimeError(f"Invalid YAML syntax: {str(e)}") from e
+    except ValueError as e:
+        raise RuntimeError(f"Invalid data format: {str(e)}") from e

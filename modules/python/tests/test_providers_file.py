@@ -1,4 +1,5 @@
 from datetime import date
+import pytest
 from src.ai_providers_and_models.providers_file import load_providers_file
 
 TEST_YAML = """
@@ -95,3 +96,20 @@ def test_load_providers_yaml(tmp_path):
     gemini_openai = providers.providers["gemini_openai"]
     assert gemini_openai.id == "gemini_openai"
     assert gemini_openai.name == "Gemini (OpenAI Compatible)"
+
+
+def test_load_providers_yaml_invalid_yaml():
+    with pytest.raises(RuntimeError, match="Invalid YAML syntax"):
+        load_providers_file("invalid: yaml: {")
+
+
+def test_load_providers_yaml_missing_required_fields():
+    invalid_yaml = """
+    version: "0.1.7"
+    # missing updated field
+    source: "https://github.com/dwmkerr/ai-providers-and-models"
+    author: "dwmkerr"
+    providers: {}
+    """
+    with pytest.raises(RuntimeError, match="Invalid data format"):
+        load_providers_file(invalid_yaml)
