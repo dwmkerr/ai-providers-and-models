@@ -46,15 +46,18 @@ describe("models", () => {
   });
 
   describe("openai-models", () => {
-    describe("gpt-4o-2024-08-06", () => {
+    describe("gpt-4o", () => {
       test("is configured", () => {
-        const model = providers["openai"].models["gpt-4o-2024-08-06"];
+        const model = providers["openai"].models["gpt-4o"];
         expect(model).not.toBeUndefined();
-        expect(model.id).toBe("gpt-4o-2024-08-06");
+        expect(model.id).toBe("gpt-4o");
         expect(model.name).toBe("GPT-4o");
         expect(model.description_short).toBe(
           "Fast, intelligent, flexible GPT model",
         );
+        expect(model.versions).toHaveLength(3);
+        expect(model.versions[0].id).toBe("gpt-4o-2024-08-06");
+        expect(model.versions[0].isDefault).toBe(true);
       });
     });
 
@@ -63,38 +66,53 @@ describe("models", () => {
         const model = providers["openai"].models["gpt-4.5-preview"];
         expect(model).not.toBeUndefined();
         expect(model.id).toBe("gpt-4.5-preview");
+        expect(model.versions).toHaveLength(1);
+        expect(model.versions[0].id).toBe("gpt-4.5-preview-2025-02-27");
+        expect(model.versions[0].isDefault).toBe(true);
       });
     });
 
-    describe("o3-mini-2025-01-31", () => {
+    describe("o3-mini", () => {
       test("is configured", () => {
-        const model = providers["openai"].models["o3-mini-2025-01-31"];
+        const model = providers["openai"].models["o3-mini"];
         expect(model).not.toBeUndefined();
-        expect(model.id).toBe("o3-mini-2025-01-31");
+        expect(model.id).toBe("o3-mini");
+        expect(model.versions).toHaveLength(1);
+        expect(model.versions[0].id).toBe("o3-mini-2025-01-31");
+        expect(model.versions[0].isDefault).toBe(true);
       });
     });
 
-    describe("o1-2024-12-17", () => {
+    describe("o1", () => {
       test("is configured", () => {
-        const model = providers["openai"].models["o1-2024-12-17"];
+        const model = providers["openai"].models["o1"];
         expect(model).not.toBeUndefined();
-        expect(model.id).toBe("o1-2024-12-17");
+        expect(model.id).toBe("o1");
+        expect(model.versions).toHaveLength(2);
+        expect(model.versions[0].id).toBe("o1-2024-12-17");
+        expect(model.versions[0].isDefault).toBe(true);
       });
     });
 
-    describe("gpt-4o-mini-2024-07-18", () => {
+    describe("gpt-4", () => {
       test("is configured", () => {
-        const model = providers["openai"].models["gpt-4o-mini-2024-07-18"];
+        const model = providers["openai"].models["gpt-4"];
         expect(model).not.toBeUndefined();
-        expect(model.id).toBe("gpt-4o-mini-2024-07-18");
+        expect(model.id).toBe("gpt-4");
+        expect(model.versions).toHaveLength(2);
+        expect(model.versions[0].id).toBe("gpt-4-0613");
+        expect(model.versions[0].isDefault).toBe(true);
       });
     });
 
-    describe("gpt-4-0613", () => {
+    describe("gpt-3.5-turbo", () => {
       test("is configured", () => {
-        const model = providers["openai"].models["gpt-4-0613"];
+        const model = providers["openai"].models["gpt-3.5-turbo"];
         expect(model).not.toBeUndefined();
-        expect(model.id).toBe("gpt-4-0613");
+        expect(model.id).toBe("gpt-3.5-turbo");
+        expect(model.versions).toHaveLength(3);
+        expect(model.versions[0].id).toBe("gpt-3.5-turbo-0125");
+        expect(model.versions[0].isDefault).toBe(true);
       });
     });
   });

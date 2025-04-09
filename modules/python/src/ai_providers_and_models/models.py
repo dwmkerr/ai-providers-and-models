@@ -1,6 +1,6 @@
 from datetime import date
 from pydantic import BaseModel
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 
 class Pricing(BaseModel):
@@ -24,6 +24,14 @@ class Endpoints(BaseModel):
     translation: bool
 
 
+class Version(BaseModel):
+    id: str
+    release_date: str
+    isDefault: bool
+    isDeprecated: bool
+    description: Optional[str] = None
+
+
 class Model(BaseModel):
     id: str
     name: str
@@ -31,13 +39,14 @@ class Model(BaseModel):
     description_short: str
     description: str
     status: str
-    knowledge_cutoff: Optional[str] = None
+    knowledgeCutoff: Optional[str] = None
     context_window: Optional[int] = None
     max_output_tokens: Optional[int] = None
     validated: bool
     pricing: Pricing
     modalities: Dict[str, bool]
     endpoints: Endpoints
+    versions: Optional[List[Version]] = None
 
 
 class Provider(BaseModel):

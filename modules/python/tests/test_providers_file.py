@@ -1,3 +1,4 @@
+from datetime import date
 from src.ai_providers_and_models.providers_file import load_providers_file
 
 TEST_YAML = """
@@ -20,7 +21,7 @@ providers:
         description_short: "A test model"
         description: "This is a test model for demonstration purposes."
         status: "preview"
-        knowledge_cutoff: "2024-01-01"
+        knowledgeCutoff: "2024-01-01"
         context_window: 1024
         max_output_tokens: 512
         validated: true
@@ -46,6 +47,12 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
+        versions:
+          - id: "test-model-2024-01-01"
+            release_date: "2024-01-01"
+            isDefault: true
+            isDeprecated: false
+            description: "Initial release of test model"
   # Google Gemini with the OpenAI Compatible Base URL.
   gemini_openai:
     <<: *openai
@@ -58,13 +65,31 @@ providers:
 def test_load_providers_yaml(tmp_path):
     providers = load_providers_file(TEST_YAML)
     assert providers.version == "0.1.7"
+    assert providers.updated == date(2025, 3, 18)
+    assert providers.source == "https://github.com/dwmkerr/ai-providers-and-models"
+    assert providers.author == "dwmkerr"
+    
     assert "openai" in providers.providers
     openai_provider = providers.providers["openai"]
     assert openai_provider.name == "OpenAI"
+    
     # Check one of the models
     test_model = openai_provider.models["test-model"]
     assert test_model.name == "Test Model"
     assert test_model.pricing.input_per_million == 1.0
+    assert test_model.knowledgeCutoff == "2024-01-01"
+    assert test_model.context_window == 1024
+    assert test_model.max_output_tokens == 512
+    assert test_model.validated == True
+    
+    # Check versions
+    assert len(test_model.versions) == 1
+    version = test_model.versions[0]
+    assert version.id == "test-model-2024-01-01"
+    assert version.release_date == "2024-01-01"
+    assert version.isDefault == True
+    assert version.isDeprecated == False
+    assert version.description == "Initial release of test model"
 
     # Assert that we can load anchors (e.g. gemini_openai).
     gemini_openai = providers.providers["gemini_openai"]
