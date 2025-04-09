@@ -7,3 +7,5 @@ black
 build
 twine # securely send packages to pypi / test.pypi
 coverage
+openai # for integration tests
+tqdm # for progress bars in integration tests

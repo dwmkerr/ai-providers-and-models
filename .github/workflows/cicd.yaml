@@ -5,6 +5,12 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      skip_integration_tests:
+        description: 'Skip integration tests (emergency override)'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -44,10 +50,25 @@ jobs:
           manifest-file: .github/release-please-manifest.json
           config-file: .github/release-please-config.json
 
+  # Add integration test job that is required before publishing
+  integration-tests:
+    needs: release
+    # Only run if a release is being created
+    if: ${{ needs.release.outputs.released && !inputs.skip_integration_tests }}
+    uses: ./.github/workflows/model-integration-tests.yml
+    with:
+      provider: openai
+      skip: ${{ inputs.skip_integration_tests }}
+    secrets:
+      API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+
   release-node:
     name: Release Node
-    needs: release
-    if: ${{ needs.release.outputs.released }}
+    # Add dependency on integration tests
+    needs: [release, integration-tests]
+    # Allow emergency bypass of integration tests
+    if: ${{ needs.release.outputs.released && (inputs.skip_integration_tests || success() || !needs.integration-tests.result) }}
     runs-on: ubuntu-24.04
     defaults:
       run:
@@ -86,8 +107,10 @@ jobs:
 
   release-python:
     name: Release Python
-    needs: release
-    if: ${{ needs.release.outputs.released }}
+    # Add dependency on integration tests
+    needs: [release, integration-tests]
+    # Allow emergency bypass of integration tests
+    if: ${{ needs.release.outputs.released && (inputs.skip_integration_tests || success() || !needs.integration-tests.result) }}
     runs-on: ubuntu-24.04
     defaults:
       run:

@@ -1,4 +1,4 @@
-version: 0.1.9 # x-release-please-version
+version: 0.1.10 # x-release-please-version
 updated: 2025-03-26T00:00:00.000Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
@@ -30,9 +30,9 @@ providers:
           output_per_million: 10
         modalities:
           text: true
-          image: false
-          audio: false
-          video: false
+          image: true
+          audio: true
+          video: true
         endpoints:
           assistants: true
           batch: false
@@ -49,17 +49,17 @@ providers:
           translation: false
         versions:
           - id: gpt-4o-2024-08-06
-            release_date: 2024-08-06
+            release_date: "2024-08-06"
             isDefault: true
             isDeprecated: false
             description: Current version of GPT-4o, released August 2024
           - id: gpt-4o-2024-11-20
-            release_date: 2024-11-20
+            release_date: "2024-11-20"
             isDefault: false
             isDeprecated: false
             description: Latest version of GPT-4o, released November 2024
           - id: gpt-4o-2024-05-13
-            release_date: 2024-05-13
+            release_date: "2024-05-13"
             isDefault: false
             isDeprecated: true
             description: Previous version of GPT-4o, released May 2024 and now deprecated
@@ -87,7 +87,7 @@ providers:
           output_per_million: 150
         modalities:
           text: true
-          image: false
+          image: true
           audio: false
           video: false
         endpoints:
@@ -106,7 +106,7 @@ providers:
           translation: false
         versions:
           - id: gpt-4.5-preview-2025-02-27
-            release_date: 2025-02-27
+            release_date: "2025-02-27"
             isDefault: true
             isDeprecated: false
             description: Initial preview release of GPT-4.5
@@ -149,7 +149,7 @@ providers:
           translation: false
         versions:
           - id: o3-mini-2025-01-31
-            release_date: 2025-01-31
+            release_date: "2025-01-31"
             isDefault: true
             isDeprecated: false
             description: Initial release of o3-mini
@@ -192,12 +192,12 @@ providers:
           translation: false
         versions:
           - id: o1-2024-12-17
-            release_date: 2024-12-17
+            release_date: "2024-12-17"
             isDefault: true
             isDeprecated: false
             description: Current version of o1, released December 2024
           - id: o1-preview-2024-09-12
-            release_date: 2024-09-12
+            release_date: "2024-09-12"
             isDefault: false
             isDeprecated: true
             description: Preview version of o1, released September 2024 and now deprecated
