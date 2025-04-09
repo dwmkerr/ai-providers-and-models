@@ -7,10 +7,12 @@ This directory contains integration tests that verify models can be successfully
 ```bash
 # Set your OpenAI API key
 export OPENAI_API_KEY=your_api_key_here
+# Optional: Set a custom base URL if needed
+export OPENAI_BASE_URL=your_base_url_here
 
-# Run from the modules/python directory
-cd modules/python
-python -m integration_tests.test_openai_models
+# Install dependencies and run the tests
+make init
+make test
 ```
 
 ## What It Does
