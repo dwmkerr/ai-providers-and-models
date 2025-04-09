@@ -17,18 +17,19 @@ Dependencies:
 
 Ensure that the YAML file (models.yaml) is included as package data.
 """
+
 from .providers_file import load_providers_file
 
 # Load the models yaml. Try Python 3.9 files first.
 try:
     from importlib.resources import files
-    data_path = (
-        files("ai_providers_and_models.data").joinpath("models.yaml")
-    )
+
+    data_path = files("ai_providers_and_models.data").joinpath("models.yaml")
     data = data_path.read_text(encoding="utf-8")
 # ...fall back to read_text.
 except ImportError:
     from importlib.resources import read_text
+
     data = read_text("ai_providers_and_models.data", "models.yaml")
 except Exception as e:
     # Optionally, handle or log the error if the YAML fails to load.

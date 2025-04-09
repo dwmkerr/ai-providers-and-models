@@ -10,11 +10,6 @@
           "path": "models.yaml"
         },
         {
-          "type": "yaml",
-          "path": "modelsold.yaml",
-          "jsonpath": "$.version"
-        },
-        {
           "type": "json",
           "path": "modules/node/package.json",
           "jsonpath": "$.version"

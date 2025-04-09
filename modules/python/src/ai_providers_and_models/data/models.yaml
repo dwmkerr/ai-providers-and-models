@@ -1,5 +1,5 @@
-version: 0.1.8
-updated: 2025-03-18T00:00:00.000Z
+version: 0.1.9 # x-release-please-version
+updated: 2025-03-26T00:00:00.000Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
 providers:
@@ -10,18 +10,18 @@ providers:
     api_specification: api.openai.com/v1
     base_url: https://api.openai.com/v1/
     models:
-      gpt-4o-2024-08-06:
-        id: gpt-4o-2024-08-06
+      gpt-4o:
+        id: gpt-4o
         name: GPT-4o
         documentation_url: https://platform.openai.com/docs/models/gpt-4o
         description_short: Fast, intelligent, flexible GPT model
         description: >-
-          GPT-4o (“o” for “omni”) is our versatile, high-intelligence flagship
+          GPT-4o ("o" for "omni") is our versatile, high-intelligence flagship
           model. It accepts both text and image inputs, and produces text
           outputs (including Structured Outputs). It is the best model for most
           tasks, and is our most capable model outside of our o-series models.
         status: general-availability
-        knowledge_cutoff: September 30, 2023
+        knowledgeCutoff: October 2023
         context_window: 128000
         max_output_tokens: 16384
         validated: true
@@ -47,6 +47,22 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
+        versions:
+          - id: gpt-4o-2024-08-06
+            release_date: 2024-08-06
+            isDefault: true
+            isDeprecated: false
+            description: Current version of GPT-4o, released August 2024
+          - id: gpt-4o-2024-11-20
+            release_date: 2024-11-20
+            isDefault: false
+            isDeprecated: false
+            description: Latest version of GPT-4o, released November 2024
+          - id: gpt-4o-2024-05-13
+            release_date: 2024-05-13
+            isDefault: false
+            isDeprecated: true
+            description: Previous version of GPT-4o, released May 2024 and now deprecated
       gpt-4.5-preview:
         id: gpt-4.5-preview
         name: GPT-4.5
@@ -62,7 +78,7 @@ providers:
           refined outputs. Currently in preview, it provides a glimpse into the
           future of AI-driven interactions.
         status: preview
-        knowledge_cutoff: April 2024
+        knowledgeCutoff: October 2023
         context_window: 128000
         max_output_tokens: 16384
         validated: false
@@ -88,8 +104,14 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-      o3-mini-2025-01-31:
-        id: o3-mini-2025-01-31
+        versions:
+          - id: gpt-4.5-preview-2025-02-27
+            release_date: 2025-02-27
+            isDefault: true
+            isDeprecated: false
+            description: Initial preview release of GPT-4.5
+      o3-mini:
+        id: o3-mini
         name: o3-mini
         documentation_url: https://platform.openai.com/docs/models/o3-mini
         description_short: Fast, flexible, intelligent reasoning model
@@ -100,7 +122,7 @@ providers:
           calling, and Batch API.
         status: preview
         validated: true
-        knowledge_cutoff: October 2023
+        knowledgeCutoff: October 2023
         context_window: 200000
         max_output_tokens: 100000
         pricing:
@@ -125,8 +147,14 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-      o1-2024-12-17:
-        id: o1-2024-12-17
+        versions:
+          - id: o3-mini-2025-01-31
+            release_date: 2025-01-31
+            isDefault: true
+            isDeprecated: false
+            description: Initial release of o3-mini
+      o1:
+        id: o1
         name: o1
         documentation_url: https://platform.openai.com/docs/models/o1
         description_short: High-intelligence reasoning model
@@ -136,7 +164,7 @@ providers:
           producing a long internal chain of thought before responding to the
           user.
         status: general-availability
-        knowledge_cutoff: September 30, 2023
+        knowledgeCutoff: October 2023
         context_window: 200000
         max_output_tokens: 100000
         validated: true
@@ -162,6 +190,17 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
+        versions:
+          - id: o1-2024-12-17
+            release_date: 2024-12-17
+            isDefault: true
+            isDeprecated: false
+            description: Current version of o1, released December 2024
+          - id: o1-preview-2024-09-12
+            release_date: 2024-09-12
+            isDefault: false
+            isDeprecated: true
+            description: Preview version of o1, released September 2024 and now deprecated
       gpt-4o-mini-2024-07-18:
         id: gpt-4o-mini-2024-07-18
         name: GPT-4o mini
@@ -201,8 +240,8 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-      gpt-4-0613:
-        id: gpt-4-0613
+      gpt-4:
+        id: gpt-4
         name: GPT-4
         documentation_url: https://platform.openai.com/docs/models/gpt-4
         description_short: An older high-intelligence GPT model
@@ -210,7 +249,7 @@ providers:
           GPT-4 is an older version of a high-intelligence GPT model, usable in
           Chat Completions.
         status: general-availability
-        knowledge_cutoff: Dec 01, 2023
+        knowledgeCutoff: December 2023
         context_window: 8192
         max_output_tokens: 8192
         validated: true
@@ -236,17 +275,27 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-  gemini: &gemini
+        versions:
+          - id: gpt-4-0613
+            release_date: 2023-06-13
+            isDefault: true
+            isDeprecated: false
+            description: Current version of GPT-4, released June 2023
+          - id: gpt-4-0314
+            release_date: 2023-03-14
+            isDefault: false
+            isDeprecated: true
+            description: Previous version of GPT-4, released March 2023 and now deprecated
+  gemini:
     id: gemini
     name: Gemini
     docs: https://ai.google.dev/gemini-api/docs/models
     api_specification: generativelanguage.googleapis.com/v1beta
     base_url: https://generativelanguage.googleapis.com/v1beta/
-    additional_endpoints:
+    additional_endpoints: &ref_0
       - api_specification: api.openai.com/v1
         base_url: https://generativelanguage.googleapis.com/v1beta/openai/
-    models:
+    models: &ref_1
       models/gemini-2.0-flash:
         id: models/gemini-2.0-flash
         name: Gemini 2.0 Flash
@@ -367,16 +416,14 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-
-  # Google Gemini with the OpenAI Compatible Base URL.
   gemini_openai:
-    <<: *gemini
     id: gemini_openai
     name: Gemini (OpenAI Compatible)
     docs: https://ai.google.dev/gemini-api/docs/openai
     api_specification: api.openai.com/v1
     base_url: https://generativelanguage.googleapis.com/v1beta/openai/
-
+    additional_endpoints: *ref_0
+    models: *ref_1
   claude:
     id: claude
     name: Claude

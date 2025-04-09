@@ -28,15 +28,46 @@ export type ApiSpecification =
 export interface Model {
   id: string;
   name: string;
-  docs: string;
   description: string;
   description_short: string;
-  validated: boolean;
-  modalities: Modalities;
-  endpoints: Endpoints;
-  price?: Pricing;
-  context_window_tokens: number;
+  status: string;
+  knowledgeCutoff?: string;
+  context_window: number;
   max_output_tokens: number;
+  pricing: {
+    input_per_million: number;
+    output_per_million: number;
+  };
+  validated: boolean;
+  modalities: {
+    text: boolean;
+    image: boolean;
+    audio: boolean;
+    video: boolean;
+  };
+  endpoints: {
+    assistants: boolean;
+    batch: boolean;
+    chat_completions: boolean;
+    completions_legacy: boolean;
+    embeddings: boolean;
+    fine_tuning: boolean;
+    image_generation: boolean;
+    moderation: boolean;
+    realtime: boolean;
+    responses: boolean;
+    speech_generation: boolean;
+    transcription: boolean;
+    translation: boolean;
+  };
+  documentation_url: string;
+  versions: Array<{
+    id: string;
+    release_date: string;
+    isDefault: boolean;
+    isDeprecated: boolean;
+    description: string;
+  }>;
 }
 
 export interface Modalities {

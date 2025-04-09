@@ -26,14 +26,6 @@ properties:
           format: uri
         api_specification:
           type: string
-
-
-
-    # additional_endpoints:
-    #   # Gemini has OpenAI compatible endpoints.
-    #   # https://ai.google.dev/gemini-api/docs/openai
-    #   api_specification: api.openai.com/v1
-    #   base_url: https://generativelanguage.googleapis.com/v1beta/openai/
         models:
           type: object
           additionalProperties:
@@ -48,7 +40,7 @@ properties:
               status:
                 type: string
                 enum: [preview, general-availability, legacy, deprecated]
-              knowledge_cutoff:
+              knowledgeCutoff:
                 type: string
               context_window:
                 type: integer
@@ -122,11 +114,32 @@ properties:
               documentation_url:
                 type: string
                 format: uri
+              versions:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    release_date:
+                      type: string
+                      format: date
+                    isDefault:
+                      type: boolean
+                    isDeprecated:
+                      type: boolean
+                    description:
+                      type: string
+                  required:
+                    - id
+                    - release_date
+                    - isDefault
+                    - isDeprecated
+                    - description
             required:
               - name
               - description
               - status
-              - knowledge_cutoff
               - context_window
               - max_output_tokens
               - pricing
