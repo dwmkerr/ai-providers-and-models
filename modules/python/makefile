@@ -19,11 +19,16 @@ lint:  # lint the code
 lint-fix: # lint and fix the code
 	black .
 
-.PHONY: test # run tests and report coverage
+.PHONY: test # run unit tests only
 test:
-	coverage run -m pytest
+	pytest tests/ -v
+	coverage run -m pytest tests/
 	coverage xml -o artifacts/coverage/coverage.xml
 	coverage report -m
+
+.PHONY: integration-test # run integration tests (requires API keys)
+integration-test:
+	python -m integration_tests.test_openai_models
 
 .PHONY: build # create a build ready for distribution
 build:
