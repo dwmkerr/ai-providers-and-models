@@ -1,4 +1,4 @@
-version: 0.1.9 # x-release-please-version
+version: 0.1.10 # x-release-please-version
 updated: 2025-03-26T00:00:00.000Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
@@ -30,9 +30,9 @@ providers:
           output_per_million: 10
         modalities:
           text: true
-          image: false
-          audio: false
-          video: false
+          image: true
+          audio: true
+          video: true
         endpoints:
           assistants: true
           batch: false
@@ -87,7 +87,7 @@ providers:
           output_per_million: 150
         modalities:
           text: true
-          image: false
+          image: true
           audio: false
           video: false
         endpoints:

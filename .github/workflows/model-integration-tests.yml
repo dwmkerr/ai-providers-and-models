@@ -1,0 +1,35 @@
+name: "Model Integration Tests"
+
+# This workflow can be triggered manually or called from other workflows
+on:
+  workflow_dispatch:
+  # Allow this workflow to be called by other workflows
+  workflow_call:
+
+jobs:
+  integration-test:
+    name: Run Model Integration Tests
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ./modules/python
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: make init
+
+      - name: Lint Code
+        run: make lint
+
+      - name: Run Integration Tests
+        run: python -m integration_tests.test_openai_models
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
