@@ -5,13 +5,6 @@ on:
   workflow_dispatch:
   # Allow this workflow to be called by other workflows
   workflow_call:
-    secrets:
-      OPENAI_API_KEY:
-        description: 'OpenAI API Key'
-        required: true
-      OPENAI_BASE_URL:
-        description: 'Custom Base URL for OpenAI (optional)'
-        required: false
 
 jobs:
   integration-test:
