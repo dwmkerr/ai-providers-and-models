@@ -17,8 +17,8 @@ def main():
             indent = "  "
             # Print the model name in green bold then a grey description.
             print(
-                f"{indent}\033[92m\033[1m{model.name}\033[0m" +
-                f"\033[90m: {model.description_short}\033[0m"
+                f"{indent}\033[92m\033[1m{model.name}\033[0m"
+                + f"\033[90m: {model.description_short}\033[0m"
             )
 
 

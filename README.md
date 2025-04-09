@@ -21,6 +21,7 @@ APIs available for:
 <!-- vim-markdown-toc GFM -->
 
 - [Usage](#usage)
+- [Features](#features)
 - [APIs](#apis)
   - [NodeJS](#nodejs)
   - [Python](#python)
@@ -38,29 +39,30 @@ The [`models.yaml`](./models.yaml) file contains details of available OpenAI mod
 A short snippet is below - the `models.yaml` file is more complete.
 
 ```yaml
-version: 0.1.5
-updated: 2025-03-12T00:00:00.000Z
+version: 0.1.9
+updated: 2025-03-26T00:00:00.000Z
 providers:
   openai:
     id: openai
     name: OpenAI
     docs: https://platform.openai.com/docs/models
-    api_specification: openai/v1
+    api_specification: api.openai.com/v1
+    base_url: https://api.openai.com/v1/
     models:
-      "gpt-4o-2024-08-06":
-        id: gpt-4o-2024-08-06
+      gpt-4o:
+        id: gpt-4o
         name: GPT-4o
         documentation_url: https://platform.openai.com/docs/models/gpt-4o
         description_short: Fast, intelligent, flexible GPT model
         description: >-
-          GPT-4o (“o” for “omni”) is our versatile, high-intelligence flagship
+          GPT-4o ("o" for "omni") is our versatile, high-intelligence flagship
           model. It accepts both text and image inputs, and produces text
           outputs (including Structured Outputs). It is the best model for most
           tasks, and is our most capable model outside of our o-series models.
         status: general-availability
-        knowledge_cutoff: September 30, 2023
+        knowledgeCutoff: October 2023
         context_window: 128000
-        max_output_tokens: 16384 
+        max_output_tokens: 16384
         validated: true
         pricing:
           input_per_million: 2.5
@@ -69,10 +71,45 @@ providers:
           text: true
           image: false
           audio: false
+          video: false
         endpoints:
           assistants: true
-          # ...etc...
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+          - id: gpt-4o-2024-08-06
+            release_date: "2024-08-06"
+            isDefault: true
+            isDeprecated: false
+            description: Current version of GPT-4o, released August 2024
+          - id: gpt-4o-2024-11-20
+            release_date: "2024-11-20"
+            isDefault: false
+            isDeprecated: false
+            description: Latest version of GPT-4o, released November 2024
+          - id: gpt-4o-2024-05-13
+            release_date: "2024-05-13"
+            isDefault: false
+            isDeprecated: true
+            description: Previous version of GPT-4o, released May 2024 and now deprecated
 ```
+
+## Features
+
+- **Model Versioning**: Track multiple versions of models with deprecation status and default versions. See [versioning documentation](./modules/features.md#model-versioning) for details.
+- **Provider Support**: Multiple AI providers including OpenAI and Gemini
+- **Cross-Platform**: Available for Node.js and Python
+- **Regular Updates**: Models and capabilities are regularly updated
 
 ## APIs
 
