@@ -34,7 +34,11 @@ jobs:
           python-version: "3.10"
 
       - name: Install Dependencies
-        run: make init
+        run: |
+          # Install the python module, as we use it...
+          (cd ../modules/python && make init)
+          # ...then install our own dependencies.
+          make init
 
       - name: Run Integration Tests
         run: make integration-tests
