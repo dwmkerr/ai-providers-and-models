@@ -56,12 +56,6 @@ jobs:
     # Only run if a release is being created
     if: ${{ needs.release.outputs.released && !inputs.skip_integration_tests }}
     uses: ./.github/workflows/model-integration-tests.yml
-    with:
-      provider: openai
-      skip: ${{ inputs.skip_integration_tests }}
-    secrets:
-      API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
 
   release-node:
     name: Release Node
