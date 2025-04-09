@@ -1,10 +1,21 @@
 name: "Model Integration Tests"
 
-# This workflow can be triggered manually or called from other workflows
+# This workflow runs only when manually triggered with input parameters
 on:
   workflow_dispatch:
-  # Allow this workflow to be called by other workflows
-  workflow_call:
+    inputs:
+      openai_api_key:
+        description: 'OpenAI API Key'
+        required: true
+        type: string
+      base_url:
+        description: 'Custom OpenAI API base URL (optional)'
+        required: false
+        type: string
+
+# Basic read permissions are sufficient
+permissions:
+  contents: read
 
 jobs:
   integration-test:
@@ -12,7 +23,7 @@ jobs:
     runs-on: ubuntu-24.04
     defaults:
       run:
-        working-directory: ./modules/python
+        working-directory: ./modules/integration-tests
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -25,11 +36,8 @@ jobs:
       - name: Install Dependencies
         run: make init
 
-      - name: Lint Code
-        run: make lint
-
       - name: Run Integration Tests
-        run: python -m integration_tests.test_openai_models
+        run: make integration-test
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_API_KEY: ${{ inputs.openai_api_key }}
+          OPENAI_BASE_URL: ${{ inputs.base_url }}
