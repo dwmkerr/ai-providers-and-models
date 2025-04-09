@@ -36,7 +36,7 @@ jobs:
       - name: Install Dependencies
         run: |
           # Install the python module, as we use it...
-          (cd ../modules/python && make init)
+          (cd ../python && make init)
           # ...then install our own dependencies.
           make init
 
