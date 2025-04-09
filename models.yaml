@@ -275,6 +275,17 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
+        versions:
+          - id: gpt-4-0613
+            release_date: 2023-06-13
+            isDefault: true
+            isDeprecated: false
+            description: Current version of GPT-4, released June 2023
+          - id: gpt-4-0314
+            release_date: 2023-03-14
+            isDefault: false
+            isDeprecated: true
+            description: Previous version of GPT-4, released March 2023 and now deprecated
   gemini:
     id: gemini
     name: Gemini
