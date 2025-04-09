@@ -69,11 +69,11 @@ def test_load_providers_yaml(tmp_path):
     assert providers.updated == date(2025, 3, 18)
     assert providers.source == "https://github.com/dwmkerr/ai-providers-and-models"
     assert providers.author == "dwmkerr"
-    
+
     assert "openai" in providers.providers
     openai_provider = providers.providers["openai"]
     assert openai_provider.name == "OpenAI"
-    
+
     # Check one of the models
     test_model = openai_provider.models["test-model"]
     assert test_model.name == "Test Model"
@@ -81,21 +81,22 @@ def test_load_providers_yaml(tmp_path):
     assert test_model.knowledgeCutoff == "2024-01-01"
     assert test_model.context_window == 1024
     assert test_model.max_output_tokens == 512
-    assert test_model.validated == True
-    
+    assert test_model.validated is True
+
     # Check versions
     assert len(test_model.versions) == 1
     version = test_model.versions[0]
     assert version.id == "test-model-2024-01-01"
     assert version.release_date == "2024-01-01"
-    assert version.isDefault == True
-    assert version.isDeprecated == False
+    assert version.isDefault is True
+    assert version.isDeprecated is False
     assert version.description == "Initial release of test model"
 
     # Assert that we can load anchors (e.g. gemini_openai).
     gemini_openai = providers.providers["gemini_openai"]
     assert gemini_openai.id == "gemini_openai"
     assert gemini_openai.name == "Gemini (OpenAI Compatible)"
+    assert gemini_openai.docs == "https://ai.google.dev/gemini-api/docs/openai"
 
 
 def test_load_providers_yaml_invalid_yaml():

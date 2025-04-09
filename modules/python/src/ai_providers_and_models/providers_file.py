@@ -8,16 +8,16 @@ def load_providers_file(data: str) -> ProvidersFile:
         @classmethod
         def remove_implicit_resolver(cls, tag_to_remove):
             """Remove implicit resolvers for a particular tag"""
-            if not 'yaml_implicit_resolvers' in cls.__dict__:
+            if 'yaml_implicit_resolvers' not in cls.__dict__:
                 cls.yaml_implicit_resolvers = cls.yaml_implicit_resolvers.copy()
             for first_letter, mappings in cls.yaml_implicit_resolvers.items():
-                cls.yaml_implicit_resolvers[first_letter] = [(tag, regexp)
-                                                           for tag, regexp in mappings
-                                                           if tag != tag_to_remove]
+                cls.yaml_implicit_resolvers[first_letter] = [
+                    (tag, regexp) for tag, regexp in mappings if tag != tag_to_remove
+                ]
 
     # Remove the resolver for dates
-    SafeLoaderNoDateParsing.remove_implicit_resolver('tag:yaml.org,2002:timestamp')
-    
+    SafeLoaderNoDateParsing.remove_implicit_resolver("tag:yaml.org,2002:timestamp")
+
     try:
         parsed = yaml.load(data, SafeLoaderNoDateParsing)
         return ProvidersFile(**parsed)
