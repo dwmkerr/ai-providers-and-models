@@ -240,8 +240,8 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-      gpt-4-0613:
-        id: gpt-4-0613
+      gpt-4:
+        id: gpt-4
         name: GPT-4
         documentation_url: https://platform.openai.com/docs/models/gpt-4
         description_short: An older high-intelligence GPT model
@@ -249,7 +249,7 @@ providers:
           GPT-4 is an older version of a high-intelligence GPT model, usable in
           Chat Completions.
         status: general-availability
-        knowledge_cutoff: Dec 01, 2023
+        knowledgeCutoff: December 2023
         context_window: 8192
         max_output_tokens: 8192
         validated: true
