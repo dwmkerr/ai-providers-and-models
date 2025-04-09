@@ -11,12 +11,12 @@ def main():
     # Show OpenAI models
     openai_provider = providers["openai"]
     print(f"\033[94m\033[1m{openai_provider.name} Models\033[0m")
-    
+
     for model_id, model in openai_provider.models.items():
         status = "✓" if model.validated else " "
         default_version = next((v for v in model.versions if v.isDefault), None) if model.versions else None
         version_info = f"default: {default_version.id}" if default_version else "no version info"
-        
+
         print(f"[{status}] {model_id} ({version_info})")
         print(f"    Name: {model.name}")
         print(f"    Status: {model.status}")

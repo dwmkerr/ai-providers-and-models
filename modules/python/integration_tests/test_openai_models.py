@@ -62,7 +62,7 @@ def test_model(model_id: str, model_info: Dict, client: OpenAI) -> bool:
     """Test a single OpenAI model and return success status."""
     try:
         # Construct a simple prompt
-        prompt = f"What are the main features of this model? Answer in one sentence."
+        prompt = "What are the main features of this model? Answer in one sentence."
         
         # Make completion request
         messages = [{"role": "user", "content": prompt}]
@@ -157,9 +157,6 @@ def main():
     # Find models in YAML but not in API and vice versa
     yaml_only_models = yaml_model_ids - api_models
     api_only_models = api_models - yaml_model_ids
-    
-    # Create a dictionary of YAML models for easy lookup
-    yaml_models_dict = {model_id: model for model_id, model in yaml_models}
     
     # Print header
     print(f"\n{BOLD}OpenAI Models Integration Test{RESET}")
