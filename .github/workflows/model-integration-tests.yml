@@ -9,7 +9,7 @@ on:
         required: true
         type: string
       base_url:
-        description: 'Custom OpenAI API base URL (optional)'
+        description: 'OpenAI API Base URL (optional)'
         required: false
         type: string
 
