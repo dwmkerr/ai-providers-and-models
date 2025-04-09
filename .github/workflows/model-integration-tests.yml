@@ -4,17 +4,8 @@ name: "Model Integration Tests"
 on:
   workflow_dispatch:
     inputs:
-      provider:
-        description: 'Provider to test (e.g., openai, anthropic, google)'
-        required: true
-        default: 'openai'
-        type: choice
-        options:
-          - openai
-          - anthropic
-          - google
       api_key:
-        description: 'API Key (will be stored as a secret)'
+        description: 'OpenAI API Key (will be stored as a secret)'
         required: true
       base_url:
         description: 'Custom Base URL (optional)'
@@ -22,22 +13,17 @@ on:
   # Allow this workflow to be called by other workflows
   workflow_call:
     inputs:
-      provider:
-        description: 'Provider to test (e.g., openai, anthropic, google)'
-        required: true
-        default: 'openai'
-        type: string
       skip:
         description: 'Skip integration tests (use only in emergency situations)'
         required: false
         default: false
         type: boolean
     secrets:
-      API_KEY:
-        description: 'API Key for the specified provider'
+      OPENAI_API_KEY:
+        description: 'OpenAI API Key'
         required: true
-      BASE_URL:
-        description: 'Custom Base URL for the specified provider (optional)'
+      OPENAI_BASE_URL:
+        description: 'Custom Base URL for OpenAI (optional)'
         required: false
 
 jobs:
@@ -61,15 +47,11 @@ jobs:
       - name: Install Dependencies
         run: |
           make init
-          pip install openai anthropic google-generativeai
+          pip install openai
 
       - name: Run Integration Tests
-        run: python -m integration_tests.test_${inputs.provider}_models
+        run: python -m integration_tests.test_openai_models
         env:
           # Use either workflow_dispatch input or workflow_call secret
-          OPENAI_API_KEY: ${{ (github.event_name == 'workflow_dispatch' && inputs.provider == 'openai') && inputs.api_key || (inputs.provider == 'openai') && secrets.API_KEY || '' }}
-          OPENAI_BASE_URL: ${{ (github.event_name == 'workflow_dispatch' && inputs.provider == 'openai') && inputs.base_url || (inputs.provider == 'openai') && secrets.BASE_URL || '' }}
-          ANTHROPIC_API_KEY: ${{ (github.event_name == 'workflow_dispatch' && inputs.provider == 'anthropic') && inputs.api_key || (inputs.provider == 'anthropic') && secrets.API_KEY || '' }}
-          ANTHROPIC_BASE_URL: ${{ (github.event_name == 'workflow_dispatch' && inputs.provider == 'anthropic') && inputs.base_url || (inputs.provider == 'anthropic') && secrets.BASE_URL || '' }}
-          GOOGLE_API_KEY: ${{ (github.event_name == 'workflow_dispatch' && inputs.provider == 'google') && inputs.api_key || (inputs.provider == 'google') && secrets.API_KEY || '' }}
-          GOOGLE_BASE_URL: ${{ (github.event_name == 'workflow_dispatch' && inputs.provider == 'google') && inputs.base_url || (inputs.provider == 'google') && secrets.BASE_URL || '' }}
+          OPENAI_API_KEY: ${{ github.event_name == 'workflow_dispatch' && inputs.api_key || secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ github.event_name == 'workflow_dispatch' && inputs.base_url || secrets.OPENAI_BASE_URL }}
