@@ -24,6 +24,18 @@ class Endpoints(BaseModel):
     translation: bool
 
 
+class ModalityOptions(BaseModel):
+    text: bool
+    image: bool
+    audio: bool
+    video: bool
+
+
+class Modalities(BaseModel):
+    input: ModalityOptions
+    output: ModalityOptions
+
+
 class Version(BaseModel):
     id: str
     release_date: str
@@ -44,7 +56,7 @@ class Model(BaseModel):
     max_output_tokens: Optional[int] = None
     validated: bool
     pricing: Pricing
-    modalities: Dict[str, bool]
+    modalities: Modalities
     endpoints: Endpoints
     versions: Optional[List[Version]] = None
 

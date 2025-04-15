@@ -30,10 +30,16 @@ providers:
           input_per_million: 1.0
           output_per_million: 2.0
         modalities:
-          text: true
-          image: false
-          audio: false
-          video: false
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
         endpoints:
           assistants: true
           batch: false
