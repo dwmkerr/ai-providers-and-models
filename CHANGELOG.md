@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.12](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.11...v0.1.12) (2025-04-16)
+
+
+### Features
+
+* added OpenAI GPT-4.1 ([#40](https://github.com/dwmkerr/ai-providers-and-models/issues/40)) ([ad1f772](https://github.com/dwmkerr/ai-providers-and-models/commit/ad1f7721855016c3dd7da3c35767ec7e0b6c1d7f))
+
+
+### Miscellaneous Chores
+
+* release 0.1.12 ([a61e99a](https://github.com/dwmkerr/ai-providers-and-models/commit/a61e99a053cb278dcd5a3f9b27b06c96df2252e9))
+
 ## [0.1.11](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.10...v0.1.11) (2025-04-09)
 
 
