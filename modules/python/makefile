@@ -21,6 +21,7 @@ lint-fix: # lint and fix the code
 
 .PHONY: test # run unit tests only
 test:
+	cp ../../models.yaml ./src/ai_providers_and_models/data
 	pytest tests/ -v
 	coverage run -m pytest tests/
 	coverage xml -o artifacts/coverage/coverage.xml
@@ -32,5 +33,6 @@ integration-test:
 
 .PHONY: build # create a build ready for distribution
 build:
+	cp ../../models.yaml ./src/ai_providers_and_models/data
 	rm -rf ./dist
 	python -m build

@@ -183,6 +183,7 @@ The following models have been validated:
 | Name                                                                                        | Model                                                           | Status |
 |---------------------------------------------------------------------------------------------|-----------------------------------------------------------------|--------|
 | **OpenAI**                                                                                  |                                                                 |        |
+| [GPT-4o](https://platform.openai.com/docs/models/gpt-4.1)                                   | `gpt-4.1-2025-04-14` (default)                                  | ✅ ⚠️  |
 | [GPT-4o](https://platform.openai.com/docs/models/gpt-4o)                                    | `gpt-4o-2024-08-06` (default)                                   | ✅ 🧠  |
 | [GPT-4.5 Preview](https://platform.openai.com/docs/models/gpt-4.5-preview)                  | `gpt-4.5-preview-2025-02-27` (default)                          | ✅ 🧠  |
 | [ChatGPT o1](https://platform.openai.com/docs/models/o1)                                    | `o1-2024-12-17` (default)                                       | ✅ 🧠  |

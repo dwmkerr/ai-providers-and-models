@@ -59,15 +59,31 @@ properties:
               modalities:
                 type: object
                 properties:
-                  text:
-                    type: boolean
-                  image:
-                    type: boolean
-                  audio:
-                    type: boolean
-                  video:
-                    type: boolean
-                required: [text, image, audio, video]
+                  input:
+                    type: object
+                    properties:
+                      text:
+                        type: boolean
+                      image:
+                        type: boolean
+                      audio:
+                        type: boolean
+                      video:
+                        type: boolean
+                    required: [text, image, audio, video]
+                  output:
+                    type: object
+                    properties:
+                      text:
+                        type: boolean
+                      image:
+                        type: boolean
+                      audio:
+                        type: boolean
+                      video:
+                        type: boolean
+                    required: [text, image, audio, video]
+                required: [input, output]
               endpoints:
                 type: object
                 properties:

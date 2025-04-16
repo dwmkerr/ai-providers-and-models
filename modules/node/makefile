@@ -19,9 +19,11 @@ lint-fix: # lint and fix the code
 
 .PHONY: test # run tests and report coverage
 test:
+	cp ../../models.yaml ./data
 	npm run test:cov
 
 .PHONY: build # create a build ready for distribution
 build:
+	cp ../../models.yaml ./data
 	npm install
 	npm run build

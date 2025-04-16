@@ -40,10 +40,18 @@ export interface Model {
   };
   validated: boolean;
   modalities: {
-    text: boolean;
-    image: boolean;
-    audio: boolean;
-    video: boolean;
+    input: {
+      text: boolean;
+      image: boolean;
+      audio: boolean;
+      video: boolean;
+    };
+    output: {
+      text: boolean;
+      image: boolean;
+      audio: boolean;
+      video: boolean;
+    };
   };
   endpoints: {
     assistants: boolean;

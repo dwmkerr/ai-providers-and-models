@@ -6,7 +6,7 @@ describe("models", () => {
       const openai = providers["openai"];
       expect(openai).not.toBeUndefined();
       expect(openai.name).toBe("OpenAI");
-      expect(Object.keys(openai.models).length).toBe(6);
+      expect(Object.keys(openai.models).length).toBe(7);
     });
 
     test("claude", () => {
@@ -46,6 +46,13 @@ describe("models", () => {
   });
 
   describe("openai-models", () => {
+    describe("gpt-4.1", () => {
+      test("is configured", () => {
+        const model = providers["openai"].models["gpt-4.1"];
+        expect(model).not.toBeUndefined();
+        expect(model.id).toBe("gpt-4.1");
+      });
+    });
     describe("gpt-4o", () => {
       test("is configured", () => {
         const model = providers["openai"].models["gpt-4o"];
