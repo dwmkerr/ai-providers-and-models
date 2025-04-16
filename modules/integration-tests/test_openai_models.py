@@ -135,7 +135,7 @@ def main():
     client_params = {"api_key": api_key}
     if base_url:
         client_params["base_url"] = base_url
-        print(f"info: using custom base URL: {base_url}")
+        print("info: using custom base URL")
     
     client = OpenAI(**client_params)
     

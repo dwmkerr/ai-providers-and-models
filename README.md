@@ -23,8 +23,8 @@ APIs available for:
 - [Usage](#usage)
 - [Features](#features)
 - [APIs](#apis)
-  - [NodeJS](#nodejs)
-  - [Python](#python)
+    - [NodeJS](#nodejs)
+    - [Python](#python)
 - [Status](#status)
 - [Tips](#tips)
 
