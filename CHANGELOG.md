@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.13](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.10...v0.1.13) (2025-04-26)
+
+
+### Features
+
+* added OpenAI GPT-4.1 ([#40](https://github.com/dwmkerr/ai-providers-and-models/issues/40)) ([ad1f772](https://github.com/dwmkerr/ai-providers-and-models/commit/ad1f7721855016c3dd7da3c35767ec7e0b6c1d7f))
+* gemini 2.5 + openai 4.1 updates ([#42](https://github.com/dwmkerr/ai-providers-and-models/issues/42)) ([bc0b6c2](https://github.com/dwmkerr/ai-providers-and-models/commit/bc0b6c279112cbd9ea062690d639e3fb7aa89f2e))
+* model versions ([#33](https://github.com/dwmkerr/ai-providers-and-models/issues/33)) ([a749679](https://github.com/dwmkerr/ai-providers-and-models/commit/a7496794313c48a6ad6ed8440f02b3c6a47d5dd0))
+
+
+### Miscellaneous Chores
+
+* release 0.1.10 ([473660b](https://github.com/dwmkerr/ai-providers-and-models/commit/473660bb2d780bbb63ea260c7c2d01abb9a8353a))
+* release 0.1.11 ([65ad331](https://github.com/dwmkerr/ai-providers-and-models/commit/65ad33188bcff91a245e22ad47649239375978ab))
+* release 0.1.12 ([a61e99a](https://github.com/dwmkerr/ai-providers-and-models/commit/a61e99a053cb278dcd5a3f9b27b06c96df2252e9))
+* release 0.1.13 ([97fc27e](https://github.com/dwmkerr/ai-providers-and-models/commit/97fc27ebf084ba9398c06f5002eb27ecde4d61db))
+
 ## [0.1.10](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.12...v0.1.10) (2025-04-26)
 
 
