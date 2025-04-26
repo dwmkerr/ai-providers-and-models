@@ -180,21 +180,24 @@ The following models have been validated:
 - ✅ indicates that I have checked the features, pricing and context limits, however, there is always room for human error so be particularly careful and double check pricing.
 - 🧠 indicates has been at least partly tested using [Terminal AI](https://github.com/dwmkerr/terminal-ai) and should work for chat and completion API calls.
 
-| Name                                                                                        | Model                                                           | Status |
-|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------|--------|
-| **OpenAI**                                                                                  |                                                                 |        |
-| [GPT-4o](https://platform.openai.com/docs/models/gpt-4.1)                                   | `gpt-4.1-2025-04-14` (default)                                  | ✅ ⚠️  |
-| [GPT-4o](https://platform.openai.com/docs/models/gpt-4o)                                    | `gpt-4o-2024-08-06` (default)                                   | ✅ 🧠  |
-| [GPT-4.5 Preview](https://platform.openai.com/docs/models/gpt-4.5-preview)                  | `gpt-4.5-preview-2025-02-27` (default)                          | ✅ 🧠  |
-| [ChatGPT o1](https://platform.openai.com/docs/models/o1)                                    | `o1-2024-12-17` (default)                                       | ✅ 🧠  |
-| [ChatGPT o3-mini](https://platform.openai.com/docs/models/o3-mini)                          | `o3-mini-2025-01-31` (default)                                  | ✅ 🧠  |
-| [ChatGPT o3-mini-high](https://platform.openai.com/docs/models/o3-mini)                     | `o3-mini-2025-01-31` (default) set `reasoning_effort` to `high` | ✅ 🧠  |
-| [ChatGPT 4o mini](https://platform.openai.com/docs/models/gpt-4o-mini)                      | `gpt-4o-mini-2024-07-18` (default)                              | ✅ 🧠  |
-| [ChatGPT 4](https://platform.openai.com/docs/models/gpt-4)                                  | `gpt-4-0613` (default)                                          | ✅ 🧠  |
-| **Gemini**                                                                                  |                                                                 |        |
-| [Gemini 2.0 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash)           | `models/gemini-2.0-flash` (default)                             | ✅ 🧠  |
-| [Gemini 2.0 Flash Lite](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-lite) | `models/gemini-2.0-flash-lite` (default)                        | ✅ 🧠  |
-| [Gemini 1.5 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-1.5-flash)           | `models/gemini-1.5-flash` (default)                             | ✅ 🧠  |
+| Name                                                                                                | Model                                                           | Status |
+|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|--------|
+| **OpenAI**                                                                                          |                                                                 |        |
+| [GPT-4.1](https://platform.openai.com/docs/models/gpt-4.1)                                          | `gpt-4.1-2025-04-14` (default)                                  | ✅ 🧠  |
+| [GPT-4o](https://platform.openai.com/docs/models/gpt-4o)                                            | `gpt-4o-2024-08-06` (default)                                   | ✅ 🧠  |
+| [GPT-4.5 Preview](https://platform.openai.com/docs/models/gpt-4.5-preview)                          | `gpt-4.5-preview-2025-02-27` (default)                          | ✅ 🧠  |
+| [ChatGPT o1](https://platform.openai.com/docs/models/o1)                                            | `o1-2024-12-17` (default)                                       | ✅ 🧠  |
+| [ChatGPT o3-mini](https://platform.openai.com/docs/models/o3-mini)                                  | `o3-mini-2025-01-31` (default)                                  | ✅ 🧠  |
+| [ChatGPT o3-mini-high](https://platform.openai.com/docs/models/o3-mini)                             | `o3-mini-2025-01-31` (default) set `reasoning_effort` to `high` | ✅ 🧠  |
+| [ChatGPT 4o mini](https://platform.openai.com/docs/models/gpt-4o-mini)                              | `gpt-4o-mini-2024-07-18` (default)                              | ✅ 🧠  |
+| [ChatGPT 4](https://platform.openai.com/docs/models/gpt-4)                                          | `gpt-4-0613` (default)                                          | ✅ 🧠  |
+| **Gemini**                                                                                          |                                                                 |        |
+| [Gemini 2.5 Pro Preview](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro-preview-03-25) | `models/gemini-2.5-pro-preview-03-25` (default)                 | ✅ 🧠  |
+| [Gemini 2.5 Flash Preview](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-preview)   | `models/gemini-2.5-flash-preview-04-17` (default)               | ✅ 🧠  |
+| [Gemini 2.0 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash)                   | `models/gemini-2.0-flash` (default)                             | ✅ 🧠  |
+| [Gemini 2.0 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash)                   | `models/gemini-2.0-flash` (default)                             | ✅ 🧠  |
+| [Gemini 2.0 Flash Lite](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-lite)         | `models/gemini-2.0-flash-lite` (default)                        | ✅ 🧠  |
+| [Gemini 1.5 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-1.5-flash)                   | `models/gemini-1.5-flash` (default)                             | ✅ 🧠  |
 
 Notes:
 
