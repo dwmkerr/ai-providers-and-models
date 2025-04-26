@@ -428,8 +428,7 @@ providers:
         documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro-preview-03-25
         description_short: >-
           Our best model in terms of price-performance, offering well rounded capabilities.
-        description: >-
-Our best model in terms of price-performance, offering well-rounded capabilities. Gemini 2.5 Flash rate limits are more restricted since it is an experimental / preview model.
+        description: Our best model in terms of price-performance, offering well-rounded capabilities. Gemini 2.5 Flash rate limits are more restricted since it is an experimental / preview model.
         status: preview
         knowledge_cutoff: January 2025
         context_window: 1048576
