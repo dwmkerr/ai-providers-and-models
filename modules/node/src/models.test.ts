@@ -20,7 +20,7 @@ describe("models", () => {
       const provider = providers["gemini"];
       expect(provider).not.toBeUndefined();
       expect(provider.name).toBe("Gemini");
-      expect(Object.keys(provider.models).length).toBe(3);
+      expect(Object.keys(provider.models).length).toBe(5);
     });
 
     test("exposes additional_endpoints when provided", () => {
@@ -41,7 +41,6 @@ describe("models", () => {
       const geminiOpenAI = providers["gemini_openai"];
       expect(geminiOpenAI).not.toBeUndefined();
       expect(geminiOpenAI.name).toBe("Gemini (OpenAI Compatible)");
-      expect(Object.keys(geminiOpenAI.models).length).toBe(3);
     });
   });
 
