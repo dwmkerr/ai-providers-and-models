@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.10](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.12...v0.1.10) (2025-04-26)
+
+
+### Features
+
+* gemini 2.5 + openai 4.1 updates ([#42](https://github.com/dwmkerr/ai-providers-and-models/issues/42)) ([bc0b6c2](https://github.com/dwmkerr/ai-providers-and-models/commit/bc0b6c279112cbd9ea062690d639e3fb7aa89f2e))
+
+
+### Miscellaneous Chores
+
+* release 0.1.10 ([473660b](https://github.com/dwmkerr/ai-providers-and-models/commit/473660bb2d780bbb63ea260c7c2d01abb9a8353a))
+
 ## [0.1.12](https://github.com/dwmkerr/ai-providers-and-models/compare/v0.1.11...v0.1.12) (2025-04-16)
 
 

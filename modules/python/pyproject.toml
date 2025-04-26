@@ -1,6 +1,6 @@
 [project]
 name = "ai_providers_and_models"
-version = "0.1.12"
+version = "0.1.10"
 description = "AI providers and models data module for Python"
 readme = "README.md"
 requires-python = ">=3.8"
