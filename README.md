@@ -3,6 +3,7 @@
 [![codecov](https://codecov.io/gh/dwmkerr/ai-providers-and-models/graph/badge.svg?token=1bEZ11ZqQZ)](https://codecov.io/gh/dwmkerr/ai-providers-and-models)
 [![NPM Version](https://img.shields.io/npm/v/%40dwmkerr%2Fai-providers-and-models)](https://www.npmjs.com/package/@dwmkerr/ai-providers-and-models)
 [![PyPI version](https://badge.fury.io/py/ai-providers-and-models.svg)](https://pypi.org/project/ai-providers-and-models/)
+[![Donate](https://img.shields.io/badge/thanks-donate-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/dwmkerr/sponsorships?frequency=one-time&amount=5)
 
 Regularly updated list of AI providers and models, available for multiple languages and platforms, such as [OpenAI](#status) and [Gemini](#status).
 
